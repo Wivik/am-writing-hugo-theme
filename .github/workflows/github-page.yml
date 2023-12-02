@@ -49,7 +49,7 @@ jobs:
       - run: find .
 
       - name: Build site
-        run: hugo --minify
+        run: pwd && hugo --minify
         working-directory: demo
 
       - name: Setup Pages

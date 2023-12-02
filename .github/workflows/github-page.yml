@@ -38,7 +38,7 @@ jobs:
       - name: Go to demo folder
         run: cd demo
 
-      - name: Checkout
+      - name: Checkout Theme
         uses: actions/checkout@v4
         with:
           path: themes/am-writing
@@ -48,6 +48,8 @@ jobs:
         with:
           hugo-version: '0.120.4'
           extended: true
+
+      - run: find .
 
       - name: Build site
         run: hugo --minify

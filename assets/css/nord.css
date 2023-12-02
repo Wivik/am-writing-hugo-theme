@@ -29,8 +29,13 @@
   --div-book-details-border-color: #3B4252;
 
   /* support buttons */
+
   --a-support-bg-color: #BF616A;
   --a-support-bg-color-hover: #e13d47;
+
+  --a-commission-color: #2E3440;
+  --a-commission-bg-color: #A3BE8C;
+  --a-commission-bg-color-hover: #8FBCBB;
 
   --a-kofi-bg-color: #BF616A;
   --a-kofi-bg-color-hover: #e13d47;

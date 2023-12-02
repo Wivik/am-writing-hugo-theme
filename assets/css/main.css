@@ -377,6 +377,17 @@ a.kofi-button:hover {
   background-color: var(--a-kofi-bg-color-hover);
 }
 
+a.commission-button {
+  background-color: var(--a-commission-bg-color);
+  color: var(--a-commission-color);
+}
+
+a.commission-button:active,
+a.commission-button:active:focus,
+a.commission-button:hover {
+  background-color: var(--a-commission-bg-color-hover);
+}
+
 p.disclaimer {
   text-align: left;
   color: var(--p-disclaimer-font-color);

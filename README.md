@@ -16,8 +16,7 @@ Am Writing supports :
 - Link to your Patreon, Mastodon, Ko-fi profile
 - Various book metadata for a standard display page
 - Fully customizable
-- Search by book genre
-- 
+- Search by book genre 
 
 ![Screenshot2](/images/screenshot2.png)
 

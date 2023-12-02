@@ -1,0 +1,32 @@
+{{ define "main" }}
+  {{ if eq .Kind "term" }}
+  <h1>{{ i18n (print "genres." .Title) }}</h1>
+  {{ else }}
+  <h1>{{ .Title }}</h1>
+  {{ end }}
+  {{ .Content }}
+  {{ range .Pages }}
+    <div class="book-entry">
+      <div class="book-details">
+        {{ if eq .Kind "term" }}
+          <h2>{{ i18n (print "genres." .Title) }}</h2>
+        {{ else }}
+          <h2>{{ .Title }}</h2>
+        {{ end }}
+
+        {{ if .Params.description }}
+          <p>{{ .Params.description | markdownify }}</p>
+        {{ end }}
+        
+        <p class="read-more">
+          <a href="{{ .Permalink }}" class="read-more">{{ i18n "home.more" }}</a>
+        </p>
+      </div>
+      <div class="book-cover">
+        {{ if .Params.cover }}
+          <img src="{{ .Site.BaseURL }}/books/{{ .Params.cover }}" alt="{{ .Title }}">
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+{{ end }}

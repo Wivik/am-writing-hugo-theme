@@ -1,0 +1,46 @@
+home:
+  new-release: "Dernière publication"
+  more: "Découvrir"
+  patreonpage: "Ma page Patreon"
+  latestnews: "Dernières nouvelles"
+  viewOnMastodon: "Lire sur Mastodon"
+  followOnMastodon: "Suivre"
+  publishedDateOnMastodon: "Publié le"
+
+book:
+  by: "par : "
+  descr: "Description"
+  about: "A propos de ce livre"
+  pages: "Pages"
+  words: "Mots"
+  publishedDate: Publication
+  isbn: "ISBN"
+  buy: "Où trouver ce livre"
+  language: "Langue"
+  book2read: "Où acheter"
+  freebook: "Livre gratuit"
+  translationInProgress: "Traduction en cours"
+  authorsNote: "Note de l'auteur"
+  alsoavailable: "Aussi disponible sur"
+
+genres:
+  short-story: "Histoire Courte"
+  science-fiction: "Science Fiction"
+
+about:
+  support: "Soutien"
+  patreon: "Soutenez-moi sur Patreon"
+  author: |
+    Racontez à vos lecteurs qui vous êtes.
+  disclaimer: ''
+  warning: "Avertissement"
+  legal-notice: |
+    Les histoires et personnages présentés dans les livres de XXXXX sont purement fictifs. Toute ressemblance avec des personnes existantes ou ayant existé ne serait que pure coïncidence.
+
+footer:
+  copyright: "Tous droits réservés."
+  licensedUnder: "Contenu licencié sous"
+  poweredBy: "Propulsé par"
+  usingTheme: "utilisant le thème"
+  availableOn: "disponible sur"
+  licensedUnder: "sous licence MIT License"

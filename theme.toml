@@ -1,0 +1,20 @@
+name = 'Am Writing'
+license = 'MIT'
+licenselink = 'https://github.com/Wivik/am-writing-hugo-theme'
+description = 'Theme description'
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/Wivik/am-writing-hugo-theme'
+
+# If you have a running demo of the theme
+demosite = 'https://books.zedas.fr'
+
+# Taxonomy terms
+tags = ['writer', 'library']
+features = ['some', 'awesome', 'features']
+
+
+# If the theme has a single author
+[author]
+  name = 'Seb'
+  homepage = 'https://zedas.rr'

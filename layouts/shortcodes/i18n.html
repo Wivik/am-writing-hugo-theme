@@ -1,0 +1,5 @@
+{{ with i18n (index .Params 0) }}
+  {{ . | markdownify }}
+{{ else }}
+  {{ errorf "No translation found for key: %s" (index .Params 0) }}
+{{ end }}

@@ -1,0 +1,66 @@
+{{ define "main" }}
+
+  <h1>{{ i18n "home.new-release" }}</h1>
+  {{ range first 1 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+    <div class="book-entry">
+      <div class="book-details">
+        <h2>{{ .Title }}</h2>
+        {{ if .Params.description }}
+          <p>{{ .Params.description | markdownify }}</p>
+        {{ end }}
+        
+        <p class="read-more">
+          <a href="{{ .Permalink }}" class="read-more">{{ i18n "home.more" }}</a>
+        </p>
+      </div>
+      <div class="book-cover">
+        {{ if .Params.cover }}
+          <img src="{{ .Site.BaseURL }}/books/{{ .Params.cover }}" alt="{{ .Title }}">
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+
+  {{ if .Site.Params.mastodon }}
+    <h1>{{ i18n "home.latestnews" }}</h1>
+
+  <p>
+    <div id="mastodon-feed" class="mastodon-feed"></div>
+    <script>
+      var i18n = {
+        followOnMastodon: "{{ i18n "home.followOnMastodon" }}",
+        viewOnMastodon: "{{ i18n "home.viewOnMastodon" }}",
+        publishedDateOnMastodon: "{{ i18n "home.publishedDateOnMastodon" }}",
+      };
+      var mastodonProfile = "{{ .Site.Params.mastodon }}";
+      var maxItems = "{{ .Site.Params.mastodonMaxItems }}";
+    </script>
+    {{- with resources.Get "js/mastodon.js" }}
+    {{- if eq hugo.Environment "development" }}
+      {{- with . | js.Build }}
+        <script src="{{ .RelPermalink }}"></script>
+      {{- end }}
+    {{- else }}
+      {{- $opts := dict "minify" true }}
+      {{- with . | js.Build $opts | fingerprint }}
+        <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+      {{- end }}
+    {{- end }}
+  {{- end }}
+
+  </p>
+  {{ end }}
+
+  {{ if .Site.Params.patreon }}
+  <hr />
+  
+  <p style="text-align: center;">
+    <a href="https://patreon.com/MaximeJaray?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link" target="_blank" rel="noopener noreferrer">
+      <img src="{{ .Site.BaseURL }}/eroticnovelwriter-preview.jpg" alt="Patreon" />
+    </a>
+    <br />{{ i18n "home.patreonpage" }}
+  </p>
+  {{ end }}
+
+
+{{ end }}

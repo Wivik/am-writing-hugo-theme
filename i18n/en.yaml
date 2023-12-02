@@ -1,0 +1,47 @@
+home:
+  new-release: "New release"
+  more: "Discover"
+  patreonpage: "My Patreon page"
+  latestnews: "Latest news"
+  viewOnMastodon: "View on Mastodon"
+  followOnMastodon: "Follow"
+  publishedDateOnMastodon: "Published on"
+
+book:
+  by: "by : "
+  descr: "Description"
+  about: "About this book"
+  pages: "Pages"
+  words: "Words"
+  publishedDate: "Released on"
+  isbn: "ISBN"
+  dateformat: "January 2, 2006"
+  lang: "Langue"
+  buy: "Where to find this book ?"
+  book2read: "Where to buy"
+  freebook: "Free book"
+  translationInProgress: "Translation in progress"
+  authorsNote: "Author's note"
+  alsoavailable: "Also available on"
+
+genres:
+  short-story: "Histoire Courte"
+  science-fiction: "Science Fiction"
+
+about:
+  support: "Support"
+  patreon: "Support me on Patreon"
+  author: |
+    Tell you readers who you are.
+  disclaimer: ''
+  warning: "Disclaimer"
+  legal-notice: |
+    The stories and characters in XXXXXXX's books are purely fictional. Any resemblance to existing or former persons is purely coincidental.
+
+footer:
+  copyright: "All rights reserved."
+  licensedUnder: "Content licensed under"
+  poweredBy: "Powered by"
+  usingTheme: "using theme"
+  availableOn: "available on"
+  licensedUnder: "licensed under MIT License"

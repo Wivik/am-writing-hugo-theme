@@ -1,9 +1,221 @@
-# Theme Name
+# Am Writing - A Hugo Theme for a writer's website
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Wivik_am-writing-hugo-theme&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Wivik_am-writing-hugo-theme)
 
+Am Writing is a theme made for [Hugo](https://gohugo.io) for writers who which to create an easy website.
+
+[![Screenshot](/images/tn.png)](/images/screenshot.png)
+
 ## Features
+
+Am Writing supports :
+
+- Three different themes
+- Multilingual (French and English by default)
+- Mastodon Feed integration
+- Link to your Patreon, Mastodon, Ko-fi profile
+- Various book metadata for a standard display page
+- Fully customizable
+- Search by book genre
+- 
+
+![Screenshot2](/images/screenshot2.png)
 
 ## Installation
 
+In your hugo website root folder, add the theme :
+
+```
+git clone https://github.com/Wivik/am-writing-hugo-theme themes/am-writing
+```
+
+Or as a sub-module :
+
+```
+git submodule add https://github.com/Wivik/am-writing-hugo-theme themes/am-writing
+```
+
+Then, proceed to configuration.
+
 ## Configuration
+
+### Enable the theme
+
+Change in `hugo.yaml` (or `toml`) the theme :
+
+```yaml
+theme: am-writing
+```
+
+Add the following taxonomies for the books list :
+
+```yaml
+taxonomies:
+  genres: genres
+
+```
+
+Add the default content language and indicate it's in a subdir.
+
+```yaml
+defaultContentLanguage: fr
+defaultContentLanguageInSubdir: true
+```
+
+Then, add the two langues settings :
+
+Do not change `mainSections: ['books']`
+
+```yaml
+languages:
+  fr:
+    contentDir: content/fr
+    disabled: false
+    languageCode: fr-FR
+    languageName: Français
+    title: Demo Author
+    params:
+      subtitle: Auteur d'un Site Demo
+      mainSections: ['books']
+    weight: 1
+    menu:
+      main:
+        - identifier: home
+          name: 'Accueil'
+          url: /fr/
+          weight: 10
+        - identifier: books
+          name: 'Livres'
+          url: /fr/books/
+          weight: 20
+        - identifier: tags
+          name: 'Genres'
+          url: /fr/genres/
+          weight: 30
+        - identifier: legal
+          name: 'Mentions légales'
+          url: /fr/legal/
+          weight: 40
+  en:
+    contentDir: content/en
+    languageCode: en-GB
+    languageName: English
+    title: Demo Author
+    disabled: false
+    params:
+      subtitle: Writer of a Demo Website
+      mainSections: ['books']
+    weight: 2
+    menu:
+      main:
+        - identifier: home
+          name: 'Home'
+          url: /en/
+          weight: 10
+        - identifier: books
+          name: 'Books'
+          url: /en/books/
+          weight: 20
+        - identifier: tags
+          name: 'Genres'
+          url: /en/genres/
+          weight: 30
+        - identifier: legal
+          name: 'Legal Notice'
+          url: /en/legal/
+          weight: 40
+
+```
+
+Adapt it with you choices.
+
+### Specific settings
+
+The theme supports the following settings :
+
+| Setting | Required | Default value | Description |
+| ------- | -------- | ------------- | ----------- |
+| `params.author` | No | `none` | Your author name, your should set it. |
+| `params.avatar` | No | `none` | A picture expected to be in the `/static` folder. |
+| `params.mastodon` | No | `none` | The URL of your Mastodon profile. |
+| `params.mastodonMaxItems` | No | `5` | How much posts you want to display in your feed. |
+| `params.kofi` | No | `none` | Your Ko-fi profile URL |
+| `params.patreon` | No | `none` | Your Patreon profile URL |
+| `params.contentLicense` | No | `none` | Display the license used for the website in the footer. Ex : CC BY-SA 4.0 |
+| `params.theme` | No | `nord` | Use one of the built-in themes :<br>- `nord`<br>- `catpuccin-latte`<br>- `catpuccin-frappe` |
+| `params.themeFont` | No | `serif` | Use the Serif or Sans Serif font. Available options :<br>- `serif`<br>- `sans-serif` |
+
+### Override default profile
+
+The short bio available on the left is configured in the translation files. To override it, create a translation file `<hugo site root dir>/i18n` named according to the language (ex : English : `en.yaml`).
+
+Inside, you can override the builtin translations :
+
+```yaml
+genres:
+  short-story: "Short Story"
+  science-fiction: "Science Fiction"
+
+about:
+  author: |
+    Insert here your author's bio
+
+  legal-notice: |
+    The stories and characters in <YOUR NAME HERE>'s books are purely fictional. Any resemblance to existing or former persons is purely coincidental.
+
+```
+
+## Books management
+
+### Books page content
+
+All the books pages are managed by metadata, no actual content inside the markdown file.
+
+Please refer to the [archetype/book.md](/archetypes/book.md) file for comprehensive reference.
+
+Variables documentation :
+
+| Name | Required | Default value | Description |
+| ---- | -------- | ------------- | ----------- |
+| `title` | Yes | `{{ replace .File.ContentBaseName "-" " " \| title }}` | The Book's title |
+| `date`| Yes | `{{ .Date }}` | The book's publication date. This is defined by Hugo as page creation, so modify it to reflect the actual release date. |
+| `draft` | No | `false` | Set true if you don't want to publish this entry yet. |
+| `cover` | No but recommended |  `{{ printf "%s.jpg" .File.ContentBaseName }}` | The name of the cover file. This file is expected to be in the `/static` folder. |
+| `author` | Yes | `{{ .Site.Params.author }}` | Author's name, in case it would be a different person. |
+| `description` | No but recommended | `none` | The book's description. Could be the synopsis or whatever else you want. Markdown is supported. |
+| `isbn` | No | `1234567891237` | Your book's ISBN |
+| `language` | Yes | `EN` | The book's language. Required if multilingual and the book has a translation. |
+| `pages` | No | `70` | How much pages the book contains. |
+| `words` | No | `18k` | How much words the book contains. |
+| `link` | No | `none`  | The link of your main selling place. Book2Read for example. |
+| `amazon` | No | `none` | The link to Amazon KDP entry. If you publish only on Amazon, ignore this field and put the link in `link`. |
+| `patreon` | No | `none`  | The link to Patreon if you publish there. |
+| `kind` | Yes | `book` | Do not remove or change, it's used by the template. |
+| `free` | No | `false` | If you publish your book for free, will change the value of the main link button to "Free book". |
+| `genres` | No | `none` | A list of your book's genres. Use the technical name available in the `i18n` files to have the labels translated. |
+| `authorsnote` | No | `none` | If you want to add a personal comment about your book. |
+
+
+### Create a new book
+
+Use hugo with the right kind.
+
+```
+hugo new content books/my-book.md --kind book
+```
+
+Then, edit the new file accordingly.
+
+### Concerns about translated books
+
+The book file (ex : `my-book.md`) *must* have the same name for eveyr languages. Change the title inside the file. So Hugo will be able to match the various languages for your content.
+
+Ex :
+
+- `en/books/my-book.md` => `title: My Book`
+- `fr/books/my-book.md` => `title: Mon Livre`
+
+
+## License
+
+Am Writing is licensed under MIT. See [LICENSE](/license.md).

@@ -1,0 +1,91 @@
+baseURL: 'https://wivik.github.io/am-writing-hugo-theme'
+languageCode: 'en-us'
+
+defaultContentLanguage: fr
+defaultContentLanguageInSubdir: true
+
+theme: am-writing
+
+params:
+  author: Demo Author
+  avatar: demo.png
+  mastodon: https://fosstodon.org/@Wivik
+  mastodonMaxItems: 5
+  kofi: https://ko-fi.com/wivik
+  patreon: 
+  contentLicense: Creative Commons BY-SA 4.0
+  # Available themes :
+  # - nord (default)
+  # - catpuccin-latte
+  # - catpuccin-frappe
+  theme: nord
+  # Available options :
+  # - serif (default)
+  # - sans-serif
+  themeFont: serif
+
+
+
+taxonomies:
+  genres: genres
+
+languages:
+  fr:
+    contentDir: content/fr
+    disabled: false
+    languageCode: fr-FR
+    languageName: Français
+    title: Demo Author
+    params:
+      subtitle: Auteur d'un Site Demo
+      mainSections: ['books']
+    weight: 1
+    menu:
+      main:
+        - identifier: home
+          name: 'Accueil'
+          url: /fr/
+          weight: 10
+        - identifier: books
+          name: 'Livres'
+          url: /fr/books/
+          weight: 20
+        - identifier: tags
+          name: 'Genres'
+          url: /fr/genres/
+          weight: 30
+        - identifier: legal
+          name: 'Mentions légales'
+          url: /fr/legal/
+          weight: 40
+  en:
+    contentDir: content/en
+    languageCode: en-GB
+    languageName: English
+    title: Demo Author
+    disabled: false
+    params:
+      subtitle: Writer of a Demo Website
+      mainSections: ['books']
+    weight: 2
+    menu:
+      main:
+        - identifier: home
+          name: 'Home'
+          url: /en/
+          weight: 10
+        - identifier: books
+          name: 'Books'
+          url: /en/books/
+          weight: 20
+        - identifier: tags
+          name: 'Genres'
+          url: /en/genres/
+          weight: 30
+        - identifier: legal
+          name: 'Legal Notice'
+          url: /en/legal/
+          weight: 40
+
+
+

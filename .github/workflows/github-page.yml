@@ -38,6 +38,11 @@ jobs:
       - name: Go to demo folder
         run: cd demo
 
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          path: themes/am-writing
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:

@@ -1,13 +1,13 @@
 name = 'Am Writing'
 license = 'MIT'
-licenselink = 'https://github.com/Wivik/am-writing-hugo-theme'
+licenselink = 'https://github.com/Wivik/am-writing-hugo-theme/LICENSE.md'
 description = 'Theme description'
 
 # The home page of the theme, where the source can be found
 homepage = 'https://github.com/Wivik/am-writing-hugo-theme'
 
 # If you have a running demo of the theme
-demosite = 'https://books.zedas.fr'
+demosite = 'https://wivik.github.io/am-writing-hugo-theme/'
 
 # Taxonomy terms
 tags = ['writer', 'library']

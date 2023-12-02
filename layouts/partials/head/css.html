@@ -1,4 +1,37 @@
+<style>
+  {{ $sans_serif_font := resources.Get "fonts/DroidSans-webfont.woff" }}
+  {{ $serif_font := resources.Get "fonts/DroidSerif-Regular.ttf" }}
+  @font-face {
+      font-family: 'Droid Sans Regular';
+      src: url('{{ $sans_serif_font.Permalink }}') format('woff2');
+  }
+  @font-face {
+      font-family: 'Droid Serif';
+      src: url('{{ $serif_font.Permalink }}') format('truetype');
+  }
+  </style>
+
+{{- with resources.Get (printf "css/%s.css" .Site.Params.themeFont) }}
+  {{- if eq hugo.Environment "development" }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{- else }}
+    {{- with . | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{- end }}
+  {{- end }}
+{{- end }}
+
 {{- with resources.Get "css/main.css" }}
+  {{- if eq hugo.Environment "development" }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{- else }}
+    {{- with . | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- with resources.Get (printf "css/%s.css" .Site.Params.theme) }}
   {{- if eq hugo.Environment "development" }}
     <link rel="stylesheet" href="{{ .RelPermalink }}">
   {{- else }}

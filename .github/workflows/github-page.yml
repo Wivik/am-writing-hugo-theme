@@ -38,7 +38,7 @@ jobs:
       - name: Checkout Theme
         uses: actions/checkout@v4
         with:
-          path: themes/am-writing
+          path: demo/themes/am-writing
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -49,7 +49,7 @@ jobs:
       - run: find .
 
       - name: Build site
-        run: pwd && hugo --minify
+        run: hugo --minify
         working-directory: demo
 
       - name: Setup Pages

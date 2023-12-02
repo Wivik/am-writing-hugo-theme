@@ -19,9 +19,10 @@ book:
   language: "Langue"
   book2read: "Où acheter"
   freebook: "Livre gratuit"
-  translationInProgress: "Traduction en cours"
+  unavailable: "Indisponible"
   authorsNote: "Note de l'auteur"
   alsoavailable: "Aussi disponible sur"
+  freePreview: "Extrait gratuit"
 
 genres:
   short-story: "Histoire Courte"

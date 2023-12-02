@@ -19,7 +19,13 @@
         {{ end }}
       </a>
       {{ else if eq .Site.Language.Lang "fr" }}
-      <i>{{ i18n "book.translationInProgress" }}</i>
+      <i>{{ i18n "book.unavailable" }}</i>
+      {{ end }}
+
+      {{ if and (.Params.freepreview) (eq .Site.Language.Lang "fr") }}
+      <a href="{{ .Site.BaseURL}}books-preview/{{ .Params.freepreview }}" target="_blank" rel="noopener noreferrer" class="read-more">
+        {{ i18n "book.freePreview" }}
+      </a>
       {{ end }}
 
       {{ if and (.Params.link) (eq .Site.Language.Lang "en") }}
@@ -31,8 +37,15 @@
         {{ end }}
       </a>
       {{ else if eq .Site.Language.Lang "en" }}
-      <i>{{ i18n "book.translationInProgress" }}</i>
+      <i>{{ i18n "book.unavailable" }}</i>
       {{ end }}
+
+      {{ if and (.Params.freepreview) (eq .Site.Language.Lang "en") }}
+      <a href="{{ .Site.BaseURL}}books-preview/{{ .Params.freepreview }}" target="_blank" rel="noopener noreferrer" class="read-more">
+        {{ i18n "book.freePreview" }}
+      </a>
+      {{ end }}
+
     </p>
 
     {{ if or (.Params.amazon ) ( .Params.patreon ) }}

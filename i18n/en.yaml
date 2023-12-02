@@ -20,9 +20,10 @@ book:
   buy: "Where to find this book ?"
   book2read: "Where to buy"
   freebook: "Free book"
-  translationInProgress: "Translation in progress"
+  unavailable: "Unavailable"
   authorsNote: "Author's note"
   alsoavailable: "Also available on"
+  freePreview: "Free preview"
 
 genres:
   short-story: "Histoire Courte"

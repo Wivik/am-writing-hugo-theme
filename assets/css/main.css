@@ -327,11 +327,11 @@ a.social-button:link, a.social-button:visited {
 }
 
 a.social-button:link svg path, a.social-button:visited svg path {
-  fill: var(--a-main-link-color);
+  fill: var(--a-social-button-link-color);
 }
 
 a.social-button:hover svg path {
-  fill: var(--a-main-link-color-hover);
+  fill: var(--a-social-button-link-color-hover);
   transition: ease-in-out 0.2s;
 }
 

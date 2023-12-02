@@ -10,8 +10,8 @@ homepage = 'https://github.com/Wivik/am-writing-hugo-theme'
 demosite = 'https://wivik.github.io/am-writing-hugo-theme/'
 
 # Taxonomy terms
-tags = ['writer', 'library']
-features = ['some', 'awesome', 'features']
+tags = ['writer', 'library', 'books']
+features = ['multilingual', 'color schemes']
 
 
 # If the theme has a single author

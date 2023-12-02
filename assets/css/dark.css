@@ -1,0 +1,48 @@
+:root {
+  --body-bg-color: #282c2d;
+  --body-font-color: #afa89d;
+  --header-bg-color: #242728;
+  --footer-bg-color: #242728;
+  --section-about-bg-color: #242728;
+  --section-content-bg-color: #34383a;
+
+  --a-menu-bg-color: #242728;
+  --a-menu-bg-color-hover: #4a5054;
+  --a-menu-link-color: #e7505d;
+  --a-menu-border-color: #34383a;
+
+  --a-main-link-color: #e7505d;
+  --a-main-link-color-hover: #7c7f93;
+  --a-main-border-color: #eff1f5;
+
+
+  --img-book-cover-shadow-color: #5b6367;
+
+  --a-social-button-link-color: #d1dbe5;
+  --a-social-button-link-color-hover: #e64553;
+
+  --a-readmore-color: #e0ddd9;
+  --a-readmore-bg-color: #338022;
+  --a-readmore-bg-color-hover: #3b6362;
+
+  --div-book-details-bg-color: #1f2223;
+  --div-book-details-font-color: #a59e92;
+  --div-book-details-border-color: #696256;
+
+  /* support buttons */
+  --a-support-bg-color: #313537;
+  --a-support-bg-color-hover: #3d414e;
+
+  --a-kofi-bg-color: #313537;
+  --a-kofi-bg-color-hover: #3d414e;
+
+  --a-patreon-bg-color: #313537;
+  --a-patreon-bg-color-hover: #3d414e;
+
+  --a-mastodon-follow-bg-color-hover: #3d414e;
+
+
+  /* about */
+  --p-disclaimer-font-color: #e59c36;
+  }
+

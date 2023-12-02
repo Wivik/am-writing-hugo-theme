@@ -144,6 +144,27 @@ The theme supports the following settings :
 | `params.theme` | No | `nord` | Use one of the built-in themes :<br>- `nord`<br>- `catpuccin-latte`<br>- `catpuccin-frappe` |
 | `params.themeFont` | No | `serif` | Use the Serif or Sans Serif font. Available options :<br>- `serif`<br>- `sans-serif` |
 
+### Themes showcase
+
+Nord (defaut)
+
+[![Nord](/images/nord-tn.png)](/images/nord.png)
+
+Catpuccin Latte
+
+[![Catpuccin Latte](/images/catpuccin-latte-tn.png)](/images/catpuccin-latte.png)
+
+Catpuccin Frappe
+
+[![Catpuccin Frappe](/images/catpuccin-frappe-tn.png)](/images/catpuccin-fraappe.png)
+
+
+Dark
+
+[![Dark](/images/dark-tn.png)](/images/dark.png)
+
+
+
 ### Override default profile
 
 The short bio available on the left is configured in the translation files. To override it, create a translation file `<hugo site root dir>/i18n` named according to the language (ex : English : `en.yaml`).
@@ -225,3 +246,6 @@ Am Writing is licensed under MIT. See [LICENSE](/license.md).
 - Droid Serif is licensed under Apache 2.0
 - Droid Sans is licensed under Apache 2.0
 - Using Remix Icons licensed under Apache 2.0
+- Uses Catpuccin color scheme licensed under MIT license
+- Uses Nord Theme color scheme licensed under MIT license
+

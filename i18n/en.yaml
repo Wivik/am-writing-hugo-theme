@@ -20,10 +20,12 @@ book:
   buy: "Where to find this book ?"
   book2read: "Where to buy"
   freebook: "Free book"
+  download: "Download"
   unavailable: "Unavailable"
   authorsNote: "Author's note"
   alsoavailable: "Also available on"
   freePreview: "Free preview"
+  draft: "Unpublished Draft"
 
 genres:
   short-story: "Histoire Courte"

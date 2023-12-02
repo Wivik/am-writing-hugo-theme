@@ -4,7 +4,12 @@
   {{ range first 1 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
     <div class="book-entry">
       <div class="book-details">
-        <h2>{{ .Title }}</h2>
+        <h2>{{ .Title }}
+          {{ if .Draft }}
+          [{{ i18n "book.draft" }}]
+        {{ end }}
+
+        </h2>
         {{ if .Params.description }}
           <p>{{ .Params.description | markdownify }}</p>
         {{ end }}

@@ -19,10 +19,12 @@ book:
   language: "Langue"
   book2read: "Où acheter"
   freebook: "Livre gratuit"
+  download: "Télécharger"
   unavailable: "Indisponible"
   authorsNote: "Note de l'auteur"
   alsoavailable: "Aussi disponible sur"
   freePreview: "Extrait gratuit"
+  draft: "Brouillon non publié"
 
 genres:
   short-story: "Histoire Courte"

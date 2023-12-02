@@ -2,16 +2,29 @@
   {{ if eq .Kind "term" }}
   <h1>{{ i18n (print "genres." .Title) }}</h1>
   {{ else }}
-  <h1>{{ .Title }}</h1>
+  <h1>{{ .Title }}
+    {{ if .Draft }}
+      [{{ i18n "book.draft" }}]
+    {{ end }}
+  </h1>
   {{ end }}
   {{ .Content }}
   {{ range .Pages }}
     <div class="book-entry">
       <div class="book-details">
         {{ if eq .Kind "term" }}
-          <h2>{{ i18n (print "genres." .Title) }}</h2>
+          <h2>{{ i18n (print "genres." .Title) }}
+            {{ if .Draft }}
+              [{{ i18n "book.draft" }}]
+            {{ end }}
+          </h2>
         {{ else }}
-          <h2>{{ .Title }}</h2>
+          <h2>{{ .Title }}
+            {{ if .Draft }}
+            [{{ i18n "book.draft" }}]
+          {{ end }}
+
+          </h2>
         {{ end }}
 
         {{ if .Params.description }}

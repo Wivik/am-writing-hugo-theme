@@ -1,6 +1,10 @@
 {{ define "main" }}
 {{ if eq .Params.kind "book" }}
-<h1>{{ .Title }}</h1>
+<h1>{{ .Title }}
+  {{ if .Draft }}
+    [{{ i18n "book.draft" }}]
+  {{ end }}
+</h1>
 <h2 class="author">{{ i18n "book.by" }} {{ .Params.author }}</h2>
 <div class="book-entry">
   <div class="book-details">
@@ -28,6 +32,13 @@
       </a>
       {{ end }}
 
+      {{ if and (.Params.epub) (eq .Site.Language.Lang "fr") }}
+      <a href="{{ .Site.BaseURL}}free-books/{{ .Params.epub }}" target="_blank" rel="noopener noreferrer" class="read-more">
+        {{ i18n "book.download" }}
+      </a>
+      {{ end }}
+
+
       {{ if and (.Params.link) (eq .Site.Language.Lang "en") }}
       <a href="{{ .Params.link }}" target="_blank" rel="noopener noreferrer" class="read-more">
         {{ if .Params.free }}
@@ -43,6 +54,12 @@
       {{ if and (.Params.freepreview) (eq .Site.Language.Lang "en") }}
       <a href="{{ .Site.BaseURL}}books-preview/{{ .Params.freepreview }}" target="_blank" rel="noopener noreferrer" class="read-more">
         {{ i18n "book.freePreview" }}
+      </a>
+      {{ end }}
+
+      {{ if and (.Params.epub) (eq .Site.Language.Lang "en") }}
+      <a href="{{ .Site.BaseURL}}free-books/{{ .Params.epub }}" target="_blank" rel="noopener noreferrer" class="read-more">
+        {{ i18n "book.download" }}
       </a>
       {{ end }}
 

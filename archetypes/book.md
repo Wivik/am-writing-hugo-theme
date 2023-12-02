@@ -13,6 +13,7 @@ link:
 amazon: 
 patreon: 
 kind: book
+epub: 
 free: false
 genres:
   - short-story

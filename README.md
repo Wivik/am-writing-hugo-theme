@@ -2,7 +2,7 @@
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Wivik_am-writing-hugo-theme&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Wivik_am-writing-hugo-theme)
 
-Am Writing is a theme made for [Hugo](https://gohugo.io) for writers who which to create an easy website.
+Am Writing is a theme made for [Hugo](https://gohugo.io) for writers who desire to create an easy website.
 
 [![Screenshot](/images/tn.png)](/images/screenshot.png)
 
@@ -218,3 +218,9 @@ Ex :
 ## License
 
 Am Writing is licensed under MIT. See [LICENSE](/license.md).
+
+### Third party content license
+
+- Droid Serif is licensed under Apache 2.0
+- Droid Sans is licensed under Apache 2.0
+- Using Remix Icons licensed under Apache 2.0

@@ -1,0 +1,45 @@
+:root {
+  --body-bg-color: #232634;
+  --body-font-color: #c6d0f5;
+  --header-bg-color: #292c3c;
+  --footer-bg-color: #292c3c;
+  --section-about-bg-color: #292c3c;
+  --section-content-bg-color: #303446;
+
+  --a-menu-bg-color: #292c3c;
+  --a-menu-bg-color-hover: #414559;
+  --a-menu-link-color: #8caaee;
+  --a-menu-border-color: #303446;
+
+  --a-main-link-color: #8caaee;
+  --a-main-link-color-hover: #babbf1;
+  --a-main-border-color: #303446;
+
+
+  --img-book-cover-shadow-color: #737994;
+
+
+  --a-readmore-color: #303446;
+  --a-readmore-bg-color: #a6d189;
+  --a-readmore-bg-color-hover: #8FBCBB;
+
+  --div-book-details-bg-color: #303446;
+  --div-book-details-font-color: #c6d0f5;
+  --div-book-details-border-color: #c6d0f5;
+
+  /* support buttons */
+  --a-support-bg-color: #414559;
+  --a-support-bg-color-hover: #626880;
+
+  --a-kofi-bg-color: #414559;
+  --a-kofi-bg-color-hover: #626880;
+
+  --a-patreon-bg-color: #414559;
+  --a-patreon-bg-color-hover: #626880;
+
+  --a-mastodon-follow-bg-color-hover: #626880;
+
+
+  /* about */
+  --p-disclaimer-font-color: #EBCB8B;
+  }

@@ -207,8 +207,13 @@ a:link.book-link-icon, a:visited.book-link-icon {
   text-decoration: none;
 }
 
-a:hover.book-link-icon path {
+a:link.book-link-icon path, a:visited.book-link-icon path {
   fill: var(--a-main-link-color);
+  transition: ease-in-out 0.2s;
+}
+
+a:hover.book-link-icon path {
+  fill: var(--a-main-link-color-hover);
   transition: ease-in-out 0.2s;
 }
 
@@ -232,6 +237,9 @@ div.book-metadata-entry svg {
   margin-right: 0.5rem;
 }
 
+div.book-metadata-entry svg path {
+  fill: var(--div-book-details-font-color)
+}
 
 /* mastodon feed */
 
@@ -318,8 +326,12 @@ a.social-button:link, a.social-button:visited {
   text-decoration: none;
 }
 
-a.social-button:hover svg path {
+a.social-button:link svg path, a.social-button:visited svg path {
   fill: var(--a-main-link-color);
+}
+
+a.social-button:hover svg path {
+  fill: var(--a-main-link-color-hover);
   transition: ease-in-out 0.2s;
 }
 

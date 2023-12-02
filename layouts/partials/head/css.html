@@ -11,7 +11,7 @@
   }
   </style>
 
-{{- with resources.Get (printf "css/%s.css" .Site.Params.themeFont) }}
+{{- with resources.Get (printf "css/%s.css" (default "serif" .Site.Params.themeFont)) }}
   {{- if eq hugo.Environment "development" }}
     <link rel="stylesheet" href="{{ .RelPermalink }}">
   {{- else }}
@@ -31,7 +31,7 @@
   {{- end }}
 {{- end }}
 
-{{- with resources.Get (printf "css/%s.css" .Site.Params.theme) }}
+{{- with resources.Get (printf "css/%s.css" (default "nord" .Site.Params.theme)) }}
   {{- if eq hugo.Environment "development" }}
     <link rel="stylesheet" href="{{ .RelPermalink }}">
   {{- else }}

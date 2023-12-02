@@ -184,13 +184,14 @@ Variables documentation :
 | `description` | No but recommended | `none` | The book's description. Could be the synopsis or whatever else you want. Markdown is supported. |
 | `isbn` | No | `1234567891237` | Your book's ISBN |
 | `language` | Yes | `EN` | The book's language. Required if multilingual and the book has a translation. |
-| `pages` | No | `70` | How much pages the book contains. |
-| `words` | No | `18k` | How much words the book contains. |
+| `pages` | No | `70` | How much pages the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
+| `words` | No | `18k` | How much words the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
 | `link` | No | `none`  | The link of your main selling place. Book2Read for example. |
 | `amazon` | No | `none` | The link to Amazon KDP entry. If you publish only on Amazon, ignore this field and put the link in `link`. |
 | `patreon` | No | `none`  | The link to Patreon if you publish there. |
 | `kind` | Yes | `book` | Do not remove or change, it's used by the template. |
 | `free` | No | `false` | If you publish your book for free, will change the value of the main link button to "Free book". |
+| `epub` | No | `false` | You can directly propose an epub file, put in this field the epub filename (ex : something.epub). It must be placed in the `/static/free-books` folder. |
 | `genres` | No | `none` | A list of your book's genres. Use the technical name available in the `i18n` files to have the labels translated. |
 | `authorsnote` | No | `none` | If you want to add a personal comment about your book. |
 

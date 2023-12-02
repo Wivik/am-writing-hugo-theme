@@ -26,10 +26,20 @@
   --div-book-details-font-color: #3B4252;
   --div-book-details-border-color: #3B4252;
 
+  /* support buttons */
+  --a-support-bg-color: #BF616A;
+  --a-support-bg-color-hover: #e13d47;
+
+  --a-kofi-bg-color: #BF616A;
+  --a-kofi-bg-color-hover: #e13d47;
+
   --a-patreon-bg-color: #BF616A;
   --a-patreon-bg-color-hover: #e13d47;
+
   --a-mastodon-follow-bg-color-hover: #e13d47;
 
+
+  /* about */
   --p-disclaimer-font-color: #EBCB8B;
 
   /* fonts */
@@ -352,14 +362,18 @@ div.about-author {
   text-align: left;
 }
 
+a.social-button:link, a.social-button:visited {
+  text-decoration: none;
+}
+
 a.social-button:hover svg path {
   fill: var(--a-main-link-color);
   transition: ease-in-out 0.2s;
 }
 
-a.patreon-button {
+a.support-button {
   border-radius: 5px;
-  background-color: var(--a-patreon-bg-color);
+  background-color: var(--a-support-bg-color);
   color: var(--a-menu-link-color);
   text-decoration: none;
   min-height: 42px;
@@ -371,12 +385,33 @@ a.patreon-button {
   margin-right: auto;
 }
 
+a.support-button:active,
+a.support-button:active:focus,
+a.support-button:hover {
+  background-color: var(--a-support-bg-color-hover);
+}
+
+a.patreon-button {
+  background-color: var(--a-patreon-bg-color);
+  color: var(--a-menu-link-color);
+}
+
 a.patreon-button:active,
 a.patreon-button:active:focus,
 a.patreon-button:hover {
   background-color: var(--a-patreon-bg-color-hover);
 }
 
+a.kofi-button {
+  background-color: var(--a-kofi-bg-color);
+  color: var(--a-menu-link-color);
+}
+
+a.kofi-button:active,
+a.kofi-button:active:focus,
+a.kofi-button:hover {
+  background-color: var(--a-kofi-bg-color-hover);
+}
 
 p.disclaimer {
   text-align: left;

@@ -239,7 +239,7 @@ Ex :
 
 ## License
 
-Am Writing is licensed under MIT. See [LICENSE](/license.md).
+Am Writing is licensed under MIT. See [LICENSE](/LICENSE).
 
 ### Third party content license
 

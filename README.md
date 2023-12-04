@@ -207,7 +207,7 @@ Variables documentation :
 | `language` | Yes | `EN` | The book's language. Required if multilingual and the book has a translation. |
 | `pages` | No | `70` | How much pages the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
 | `words` | No | `18k` | How much words the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
-| `link` | No | `none`  | The link of your main selling place. Book2Read for example. |
+| `link` | No | `none`  | The link of your main selling place. Book2Read for example.<br>If missing, the page will display "Unavailable". |
 | `amazon` | No | `none` | The link to Amazon KDP entry. If you publish only on Amazon, ignore this field and put the link in `link`. |
 | `patreon` | No | `none`  | The link to Patreon if you publish there. |
 | `kind` | Yes | `book` | Do not remove or change, it's used by the template. |

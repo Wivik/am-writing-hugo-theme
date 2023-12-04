@@ -211,6 +211,7 @@ Variables documentation :
 | `amazon` | No | `none` | The link to Amazon KDP entry. If you publish only on Amazon, ignore this field and put the link in `link`. |
 | `patreon` | No | `none`  | The link to Patreon if you publish there. |
 | `kind` | Yes | `book` | Do not remove or change, it's used by the template. |
+| `freepreview` | No | `false` | If you have a free preview for your book, put here the name of the `.epub` file. The file is expected to be in the `/static/books-preview/` folder. |
 | `free` | No | `false` | If you publish your book for free, will change the value of the main link button to "Free book". |
 | `epub` | No | `false` | You can directly propose an epub file, put in this field the epub filename (ex : something.epub). It must be placed in the `/static/free-books` folder. |
 | `genres` | No | `none` | A list of your book's genres. Use the technical name available in the `i18n` files to have the labels translated. |

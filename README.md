@@ -4,13 +4,13 @@
 
 Am Writing is a theme made for [Hugo](https://gohugo.io) for writers who desire to create an easy website.
 
-[![Screenshot](/images/tn.png)](/images/screenshot.png)
+[![Screenshot](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/screenshot.png)
 
 ## Features
 
 Am Writing supports :
 
-- Three different themes
+- Several different color themes
 - Multilingual (French and English by default)
 - Mastodon Feed integration
 - Link to your Patreon, Mastodon, Ko-fi profile
@@ -18,7 +18,7 @@ Am Writing supports :
 - Fully customizable
 - Search by book genre 
 
-![Screenshot2](/images/screenshot2.png)
+![Screenshot2](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/screenshot2.png)
 
 ## Installation
 
@@ -150,19 +150,19 @@ The theme supports the following settings :
 
 Nord (defaut)
 
-[![Nord](/images/nord-tn.png)](/images/nord.png)
+[![Nord](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/nord-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/nord.png)
 
 Catpuccin Latte
 
-[![Catpuccin Latte](/images/catpuccin-latte-tn.png)](/images/catpuccin-latte.png)
+[![Catpuccin Latte](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/catpuccin-latte-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/catpuccin-latte.png)
 
 Catpuccin Frappe
 
-[![Catpuccin Frappe](/images/catpuccin-frappe-tn.png)](/images/catpuccin-fraappe.png)
+[![Catpuccin Frappe](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/catpuccin-frappe-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/catpuccin-fraappe.png)
 
 Dark
 
-[![Dark](/images/dark-tn.png)](/images/dark.png)
+[![Dark](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/dark-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/dark.png)
 
 
 ### Override default profile
@@ -191,7 +191,7 @@ about:
 
 All the books pages are managed by metadata, no actual content inside the markdown file.
 
-Please refer to the [archetype/book.md](/archetypes/book.md) file for comprehensive reference.
+Please refer to the [archetype/book.md](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/archetypes/book.md) file for comprehensive reference.
 
 Variables documentation :
 
@@ -239,7 +239,7 @@ Ex :
 
 ## License
 
-Am Writing is licensed under MIT. See [LICENSE](/LICENSE).
+Am Writing is licensed under MIT. See [LICENSE](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/LICENSE).
 
 ### Third party content license
 

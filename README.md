@@ -191,7 +191,7 @@ about:
 
 All the books pages are managed by metadata, no actual content inside the markdown file.
 
-Please refer to the [archetype/book.md](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/archetypes/book.md) file for comprehensive reference.
+Please refer to the [archetype/book.md](https://github.com/Wivik/am-writing-hugo-theme/blob/main/archetypes/book.md) file for comprehensive reference.
 
 Variables documentation :
 
@@ -239,7 +239,7 @@ Ex :
 
 ## License
 
-Am Writing is licensed under MIT. See [LICENSE](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/LICENSE).
+Am Writing is licensed under MIT. See [LICENSE](https://github.com/Wivik/am-writing-hugo-theme/blob/main/LICENSE).
 
 ### Third party content license
 

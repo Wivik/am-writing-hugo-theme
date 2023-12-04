@@ -158,7 +158,7 @@ Catpuccin Latte
 
 Catpuccin Frappe
 
-[![Catpuccin Frappe](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/catpuccin-frappe-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/catpuccin-fraappe.png)
+[![Catpuccin Frappe](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/catpuccin-frappe-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/catpuccin-frappe.png)
 
 Dark
 

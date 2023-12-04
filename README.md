@@ -191,7 +191,7 @@ about:
 
 All the books pages are managed by metadata, no actual content inside the markdown file.
 
-Please refer to the [archetype/book.md](https://github.com/Wivik/am-writing-hugo-theme/blob/main/archetypes/book.md) file for comprehensive reference.
+Please refer to the [archetype/book.md](https://github.com/Wivik/am-writing-hugo-theme/blob/main/archetypes/book.md?plain=1) file for comprehensive reference.
 
 Variables documentation :
 

@@ -14,6 +14,7 @@ amazon:
 patreon: 
 kind: book
 epub: 
+publishDate: {{ .Date }}
 free: false
 genres:
   - short-story

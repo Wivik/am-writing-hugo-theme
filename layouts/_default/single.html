@@ -65,7 +65,7 @@
 
     </p>
 
-    {{ if or (.Params.amazon ) ( .Params.patreon ) }}
+    {{ if or (.Params.amazon ) ( .Params.patreon ) ( .Params.kofi ) }}
     <p>
       {{ i18n "book.alsoavailable" }} : <br />
       {{ if .Params.amazon }}

@@ -216,7 +216,7 @@ Variables documentation :
 | `epub` | No | `false` | You can directly propose an epub file, put in this field the epub filename (ex : something.epub). It must be placed in the `/static/free-books` folder. |
 | `genres` | No | `none` | A list of your book's genres. Use the technical name available in the `i18n` files to have the labels translated. |
 | `authorsnote` | No | `none` | If you want to add a personal comment about your book. |
-| `publishDate` | No | `{{ .Date }}` | The publication date of your book. Default to the page creation date if not provided. |
+| `publishedOn` | No | `{{ .Date }}` | The publication date of your book. Default to the page creation date if not provided. |
 
 
 ### Create a new book

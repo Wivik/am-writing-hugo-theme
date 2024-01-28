@@ -25,6 +25,7 @@ book:
   alsoavailable: "Aussi disponible sur"
   freePreview: "Extrait gratuit"
   draft: "Brouillon non publié"
+  pageCountExplanation: "Estimation basée sur une moyenne de 280 mots par pages."
 
 genres:
   short-story: "Histoire Courte"

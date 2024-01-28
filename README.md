@@ -16,7 +16,7 @@ Am Writing supports :
 - Link to your Patreon, Mastodon, Ko-fi profile
 - Various book metadata for a standard display page
 - Fully customizable
-- Search by book genre 
+- Display by book genre
 
 ![Screenshot2](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/screenshot2.png)
 
@@ -142,6 +142,7 @@ The theme supports the following settings :
 | `params.kofi` | No | `none` | Your Ko-fi profile URL |
 | `params.mastodon` | No | `none` | The URL of your Mastodon profile. |
 | `params.mastodonMaxItems` | No | `5` | How much posts you want to display in your feed. |
+| `params.pageCountisEstimated` | No | `false` | If set to true, this will add a small pop-up on the number of Pages displayed on the book details indicating the page count is an estimation. This is recommended if you only publish epub files because unlike physical copies, they does not have actual defined pages layout. <br>The default estimation is said to be based on 280 words per pages (see my [epub metadata exporter tool](https://github.com/Wivik/epub-metadata-exporter) for more). You may adapt this message in the `i18n` translation. |
 | `params.patreon` | No | `none` | Your Patreon profile URL |
 | `params.theme` | No | `nord` | Use one of the built-in themes :<br>- `nord`<br>- `catpuccin-latte`<br>- `catpuccin-frappe` |
 | `params.themeFont` | No | `serif` | Use the Serif or Sans Serif font. Available options :<br>- `serif`<br>- `sans-serif` |

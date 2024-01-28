@@ -241,6 +241,31 @@ div.book-metadata-entry svg path {
   fill: var(--div-book-details-font-color)
 }
 
+div.page-count-popup {
+  position: relative;
+  display: inline-block;
+}
+
+div.page-count-popup span.page-count-popup-content {
+  visibility: hidden;
+  width: 200px;
+  background-color: var(--body-bg-color);
+  color: var(--body-font-color);
+  text-align: center;
+  font-size: smaller;
+  border-radius: 6px;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -1rem;
+}
+
+div.page-count-popup:hover span.page-count-popup-content, .page-count-popup:active span.page-count-popup-content {
+  visibility: visible;
+}
+
 /* mastodon feed */
 
 .mastodon-feed {

@@ -26,6 +26,7 @@ book:
   alsoavailable: "Also available on"
   freePreview: "Free preview"
   draft: "Unpublished Draft"
+  pageCountExplanation: "Estimation based on an average of 280 words per pages."
 
 genres:
   short-story: "Histoire Courte"

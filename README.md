@@ -218,6 +218,7 @@ Variables documentation :
 | `genres` | No | `none` | A list of your book's genres. Use the technical name available in the `i18n` files to have the labels translated. |
 | `authorsnote` | No | `none` | If you want to add a personal comment about your book. |
 | `publishedOn` | No | `{{ .Date }}` | The publication date of your book. Default to the page creation date if not provided. |
+| `googlePlay` | No | `none` | The link to Google Play Books if you publish there. |
 
 
 ### Create a new book

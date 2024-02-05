@@ -65,7 +65,7 @@
 
     </p>
 
-    {{ if or (.Params.amazon ) ( .Params.patreon ) ( .Params.kofi ) }}
+    {{ if or (.Params.amazon ) ( .Params.patreon ) ( .Params.kofi ) ( .Params.googlePlay ) }}
     <p>
       {{ i18n "book.alsoavailable" }} : <br />
       {{ if .Params.amazon }}
@@ -95,7 +95,13 @@
         </svg>
       </a>
       {{ end }}
-
+      {{ if .Params.googlePlay }}
+      <a href="{{ .Params.googlePlay }}" target="_blank" rel="noopener noreferrer" title="Google Play Books" class="book-link-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor">
+          <path d="M4.00098 1.73438C4.17692 1.73438 4.34975 1.7808 4.50201 1.86895L20.5061 11.1345C20.9841 11.4112 21.1473 12.023 20.8705 12.501C20.783 12.6522 20.6574 12.7778 20.5061 12.8654L4.50201 22.1309C4.02405 22.4076 3.41226 22.2445 3.13555 21.7665C3.0474 21.6143 3.00098 21.4414 3.00098 21.2655V2.73438C3.00098 2.18209 3.44869 1.73438 4.00098 1.73438ZM12.2931 13.4132L7.79498 17.9124L13.494 14.6134L12.2931 13.4132ZM4.99998 6.11938V17.8784L10.8791 11.9992L4.99998 6.11938ZM15.284 10.4214L13.7071 11.9992L15.285 13.5764L18.009 11.9999L15.284 10.4214ZM7.79398 6.08537L12.2931 10.5852L13.493 9.38437L7.79398 6.08537Z"></path>
+        </svg>
+      </a>
+      {{ end }}
 
     </p>
     {{ end }}
@@ -123,11 +129,6 @@
         d="M20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22ZM19 20V4H5V20H19ZM7 6H11V10H7V6ZM7 12H17V14H7V12ZM7 16H17V18H7V16ZM13 7H17V9H13V7Z"
         fill="rgba(59,66,82,1)"></path>
     </svg> {{ .Params.pages }} {{ i18n "book.pages" }}
-    {{ if .Site.Params.pageCountisEstimated }}
-    <div class="page-count-popup"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="rgba(59,66,82,1)"><path d="M12 22C6.47715 22 2 17.5228 2 12 2 6.47715 6.47715 2 12 2 17.5228 2 22 6.47715 22 12 22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12 20 7.58172 16.4183 4 12 4 7.58172 4 4 7.58172 4 12 4 16.4183 7.58172 20 12 20ZM13 10.5V15H14V17H10V15H11V12.5H10V10.5H13ZM13.5 8C13.5 8.82843 12.8284 9.5 12 9.5 11.1716 9.5 10.5 8.82843 10.5 8 10.5 7.17157 11.1716 6.5 12 6.5 12.8284 6.5 13.5 7.17157 13.5 8Z"></path></svg>
-      <span class="page-count-popup-content">{{ i18n "book.pageCountExplanation" }}</p>
-    </div>
-    {{ end }}
   </div>
 
   <div class="book-metadata-entry">
@@ -152,18 +153,13 @@
     {{ end }}
   </div>
 
-
   <div class="book-metadata-entry">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
       <path
         d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM8 13V15H6V13H8ZM13 13V15H11V13H13ZM18 13V15H16V13H18ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"
         fill="rgba(59,66,82,1)"></path>
-    </svg> {{ i18n "book.publishedDate" }} <br />
-    {{ if .Params.publishedOn }}
-      {{ .Params.publishedOn | time.Format ":date_short" }}
-    {{ end }}
+    </svg> {{ i18n "book.publishedDate" }} <br /> {{ .Date | time.Format ":date_short" }}
   </div>
-
 
   <div class="book-metadata-entry"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
       <path

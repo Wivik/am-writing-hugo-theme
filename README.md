@@ -219,6 +219,7 @@ Variables documentation :
 | `authorsnote` | No | `none` | If you want to add a personal comment about your book. |
 | `publishedOn` | No | `{{ .Date }}` | The publication date of your book. Default to the page creation date if not provided. |
 | `googlePlay` | No | `none` | The link to Google Play Books if you publish there. |
+| `xinxii` | No | `none` | The link to XinXii if you publish there. |
 
 
 ### Create a new book

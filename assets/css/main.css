@@ -212,7 +212,19 @@ a:link.book-link-icon path, a:visited.book-link-icon path {
   transition: ease-in-out 0.2s;
 }
 
-a:hover.book-link-icon path {
+a:hover.book-link-icon {
+  fill: var(--a-main-link-color-hover);
+  transition: ease-in-out 0.2s;
+}
+
+a:link.book-link-name, a:visited.book-link-name {
+  text-decoration: none;
+  transition: ease-in-out 0.2s;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+}
+
+a:hover.book-link-name {
   fill: var(--a-main-link-color-hover);
   transition: ease-in-out 0.2s;
 }

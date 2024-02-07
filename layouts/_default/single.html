@@ -65,7 +65,7 @@
 
     </p>
 
-    {{ if or (.Params.amazon ) ( .Params.patreon ) ( .Params.kofi ) ( .Params.googlePlay ) }}
+    {{ if or (.Params.amazon ) ( .Params.patreon ) ( .Params.kofi ) ( .Params.googlePlay ) ( .Params.xinxii ) }}
     <p>
       {{ i18n "book.alsoavailable" }} : <br />
       {{ if .Params.amazon }}
@@ -102,6 +102,12 @@
         </svg>
       </a>
       {{ end }}
+      {{ if .Params.xinxii }}
+      <a href="{{ .Params.xinxii }}" target="_blank" rel="noopener noreferrer" title="XinXii" class="book-link-name">
+        <span class="xinxii">X</span>
+      </a>
+      {{ end }}
+
 
     </p>
     {{ end }}

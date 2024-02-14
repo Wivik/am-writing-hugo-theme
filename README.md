@@ -139,6 +139,7 @@ The theme supports the following settings :
 | `params.commission` | No | `false` | Display a button showing you're open for commissions. Possible values : `true` (commissions opened), `false` (commissions closed) |
 | `params.commissionLink` | No | `none` | The link to your commission platform. |
 | `params.contentLicense` | No | `none` | Display the license used for the website in the footer. Ex : CC BY-SA 4.0 |
+| `params.goodreads` | No | `none` | Your GoodReads profile URL |
 | `params.kofi` | No | `none` | Your Ko-fi profile URL |
 | `params.mastodon` | No | `none` | The URL of your Mastodon profile. |
 | `params.mastodonMaxItems` | No | `5` | How much posts you want to display in your feed. |

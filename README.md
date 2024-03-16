@@ -199,27 +199,27 @@ Variables documentation :
 
 | Name | Required | Default value | Description |
 | ---- | -------- | ------------- | ----------- |
-| `title` | Yes | `{{ replace .File.ContentBaseName "-" " " \| title }}` | The Book's title |
-| `date`| Yes | `{{ .Date }}` | The book's publication date. This is defined by Hugo as page creation, so modify it to reflect the actual release date. |
-| `draft` | No | `false` | Set true if you don't want to publish this entry yet. |
-| `cover` | No but recommended |  `{{ printf "%s.jpg" .File.ContentBaseName }}` | The name of the cover file. This file is expected to be in the `/static` folder. |
+| `amazon` | No | `none` | The link to Amazon KDP entry. If you publish only on Amazon, ignore this field and put the link in `link`. |
 | `author` | Yes | `{{ .Site.Params.author }}` | Author's name, in case it would be a different person. |
+| `authorsnote` | No | `none` | If you want to add a personal comment about your book. |
+| `book` | Yes | `true` | Do not remove or change, it's used by the template. |
+| `cover` | No but recommended |  `{{ printf "%s.jpg" .File.ContentBaseName }}` | The name of the cover file. This file is expected to be in the `/static` folder. |
+| `date`| Yes | `{{ .Date }}` | The book's publication date. This is defined by Hugo as page creation, so modify it to reflect the actual release date. |
 | `description` | No but recommended | `none` | The book's description. Could be the synopsis or whatever else you want. Markdown is supported. |
+| `draft` | No | `false` | Set true if you don't want to publish this entry yet. |
+| `epub` | No | `false` | You can directly propose an epub file, put in this field the epub filename (ex : something.epub). It must be placed in the `/static/free-books` folder. |
+| `free` | No | `false` | If you publish your book for free, will change the value of the main link button to "Free book". |
+| `freepreview` | No | `false` | If you have a free preview for your book, put here the name of the `.epub` file. The file is expected to be in the `/static/books-preview/` folder. |
+| `genres` | No | `none` | A list of your book's genres. Use the technical name available in the `i18n` files to have the labels translated. |
+| `googlePlay` | No | `none` | The link to Google Play Books if you publish there. |
 | `isbn` | No | `1234567891237` | Your book's ISBN |
 | `language` | Yes | `EN` | The book's language. Required if multilingual and the book has a translation. |
-| `pages` | No | `70` | How much pages the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
-| `words` | No | `18k` | How much words the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
 | `link` | No | `none`  | The link of your main selling place. Book2Read for example.<br>If missing, the page will display "Unavailable". |
-| `amazon` | No | `none` | The link to Amazon KDP entry. If you publish only on Amazon, ignore this field and put the link in `link`. |
+| `pages` | No | `70` | How much pages the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
 | `patreon` | No | `none`  | The link to Patreon if you publish there. |
-| `kind` | Yes | `book` | Do not remove or change, it's used by the template. |
-| `freepreview` | No | `false` | If you have a free preview for your book, put here the name of the `.epub` file. The file is expected to be in the `/static/books-preview/` folder. |
-| `free` | No | `false` | If you publish your book for free, will change the value of the main link button to "Free book". |
-| `epub` | No | `false` | You can directly propose an epub file, put in this field the epub filename (ex : something.epub). It must be placed in the `/static/free-books` folder. |
-| `genres` | No | `none` | A list of your book's genres. Use the technical name available in the `i18n` files to have the labels translated. |
-| `authorsnote` | No | `none` | If you want to add a personal comment about your book. |
 | `publishedOn` | No | `{{ .Date }}` | The publication date of your book. Default to the page creation date if not provided. |
-| `googlePlay` | No | `none` | The link to Google Play Books if you publish there. |
+| `title` | Yes | `{{ replace .File.ContentBaseName "-" " " \| title }}` | The Book's title |
+| `words` | No | `18k` | How much words the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
 | `xinxii` | No | `none` | The link to XinXii if you publish there. |
 
 

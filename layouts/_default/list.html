@@ -9,37 +9,78 @@
   </h1>
   {{ end }}
   {{ .Content }}
-  {{ range .Pages }}
-    <div class="book-entry">
-      <div class="book-details">
-        {{ if eq .Kind "term" }}
-          <h2>{{ i18n (print "genres." .Title) }}
+
+  {{ if eq .Site.Params.bookListType "list" }}
+    {{ range .Pages }}
+      <div class="book-entry">
+        <div class="book-details">
+          {{ if eq .Kind "term" }}
+            <h2>{{ i18n (print "genres." .Title) }}
+              {{ if .Draft }}
+                [{{ i18n "book.draft" }}]
+              {{ end }} {{/* if draft */}}
+            </h2>
+          {{ else }}
+            <h2>{{ .Title }}
+              {{ if .Draft }}
+                [{{ i18n "book.draft" }}]
+              {{ end }} {{/* if draft */}}
+            </h2>
+          {{ end }} {{/* if kind term */}}
+
+          {{ if .Params.description }}
+            <p>{{ .Params.description | markdownify }}</p>
+          {{ end }} {{/* if params.description */}}
+
+          <p class="read-more">
+            <a href="{{ .Permalink }}" class="read-more">{{ i18n "home.more" }}</a>
+          </p>
+        </div>
+        <div class="book-cover">
+          {{ if .Params.cover }}
+            <img src="{{ .Site.BaseURL }}/books/{{ .Params.cover }}" alt="{{ .Title }}">
+          {{ end }} {{/* if params.cover */}}
+        </div>
+      </div>
+    {{ end }} {{/* end range */}}
+  {{ else }}
+    <div class="book-grid">
+      {{ range .Pages }}
+        <div class="book-entry-grid">
+          <div class="book-cover">
+            {{ if .Params.cover }}
+              <a href="{{ .Permalink }}">
+              <img src="{{ .Site.BaseURL }}/books/{{ .Params.cover }}" alt="{{ .Title }}">
+              </a>
+            {{ end }} {{/* if param.cover */}}
+          </div>
+
+          <h1><a href="{{ .Permalink }}">{{ .Title }}</a>
             {{ if .Draft }}
               [{{ i18n "book.draft" }}]
-            {{ end }}
-          </h2>
-        {{ else }}
-          <h2>{{ .Title }}
-            {{ if .Draft }}
-            [{{ i18n "book.draft" }}]
+            {{ end }} {{/* if draft */}}
+          </h1>
+
+          {{ if .Params.PublishedOn }}
+            <h3>{{ i18n "book.publishedDate" }} : {{ .Params.PublishedOn | time.Format ":date_short" }}</h3>
+          {{ else }}
+            <h3>{{ i18n "book.publishedDate" }} : {{ .Date | time.Format ":date_short" }}</h3>
           {{ end }}
 
-          </h2>
-        {{ end }}
+          {{ if .Params.description }}
+          <details>
+            <summary>Description</summary>
+          {{ .Params.description | markdownify }}
+          </details>
+          {{ end }} {{/* if params.description */}}
 
-        {{ if .Params.description }}
-          <p>{{ .Params.description | markdownify }}</p>
-        {{ end }}
-        
-        <p class="read-more">
-          <a href="{{ .Permalink }}" class="read-more">{{ i18n "home.more" }}</a>
-        </p>
-      </div>
-      <div class="book-cover">
-        {{ if .Params.cover }}
-          <img src="{{ .Site.BaseURL }}/books/{{ .Params.cover }}" alt="{{ .Title }}">
-        {{ end }}
-      </div>
+          <p class="read-more">
+            <a href="{{ .Permalink }}" class="read-more">{{ i18n "home.more" }}</a>
+          </p>
+
+        </div>
+      {{ end }} {{/* end range */}}
     </div>
-  {{ end }}
-{{ end }}
+
+  {{ end }} {{/* if style is list or grid */}}
+{{ end }} {{/* main */}}

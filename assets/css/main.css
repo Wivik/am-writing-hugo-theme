@@ -169,6 +169,10 @@ div.book-details {
   color: var(--div-book-details-font-color);
 }
 
+.book-details h3 {
+  font-size: smaller;
+}
+
 div.book-cover {
   flex: 20%;
   padding: 0.5rem;
@@ -188,7 +192,7 @@ p.read-more {
 
 a:link.read-more, a:visited.read-more {
   text-decoration: none;
-  color: var(--a-readmore-color); 
+  color: var(--a-readmore-color);
   background-color: var(--a-readmore-bg-color);
   padding: 0.5rem;
   padding-left: 1.5rem;

@@ -12,7 +12,7 @@ words: 18k
 link: https://somelibrary.somewhere
 amazon: 
 patreon: 
-kind: book
+book: true
 genres:
   - short-story
 authorsnote: |

@@ -8,12 +8,18 @@
           {{ if .Draft }}
           [{{ i18n "book.draft" }}]
         {{ end }}
-
         </h2>
+
+        {{ if .Params.PublishedOn }}
+          <h3>{{ i18n "book.publishedDate" }} : {{ .Params.PublishedOn | time.Format ":date_short" }}</h3>
+        {{ else }}
+          <h3>{{ i18n "book.publishedDate" }} : {{ .Date | time.Format ":date_short" }}</h3>
+        {{ end }}
+
         {{ if .Params.description }}
           <p>{{ .Params.description | markdownify }}</p>
         {{ end }}
-        
+
         <p class="read-more">
           <a href="{{ .Permalink }}" class="read-more">{{ i18n "home.more" }}</a>
         </p>

@@ -136,6 +136,7 @@ The theme supports the following settings :
 | ------- | -------- | ------------- | ----------- |
 | `params.author` | No | `none` | Your author name, your should set it. |
 | `params.avatar` | No | `none` | A picture expected to be in the `/static` folder. |
+| `params.blog` | No | `false` | Enable or disable the blog feature.<br>Supported parameters :<br> - `true`<br>- `false` (default)<br>See [Blog feature](#Blog) for how to use. |
 | `params.bookListType` | No | `grid` | Change the book list style, default is thumbnail `grid` with description. Other option is `list` for the previous display way.<br>Possible values :<br>- `grid` (default)<br>- `list` |
 | `params.commission` | No | `false` | Display a button showing you're open for commissions. Possible values : `true` (commissions opened), `false` (commissions closed) |
 | `params.commissionLink` | No | `none` | The link to your commission platform. |
@@ -197,6 +198,58 @@ about:
   legal-notice: |
     The stories and characters in <YOUR NAME HERE>'s books are purely fictional. Any resemblance to existing or former persons is purely coincidental.
 
+```
+
+### Blog
+
+This theme can also be your blog. It's a very simple feature so don't expect fancy use cases.
+
+[![blog](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/blog-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/blog.png)
+
+To use the blog feature, follow these steps :
+
+1. Enable the feature in your hugo site config
+
+```yaml
+params:
+  blog: true
+```
+
+I recommend to reduce the article summary. Add the following setting in hugo config too :
+
+`summaryLength: 20`
+
+2. Add the menu entry
+
+```yaml
+        - identifier: blog
+          name: 'Blog'
+          url: /blog/
+          weight: 30
+```
+
+Or if you use multilingual :
+
+```yaml
+        - identifier: blog
+          name: 'Blog'
+          url: /fr/blog/
+          weight: 30
+```
+
+```yaml
+        - identifier: blog
+          name: 'Blog'
+          url: /en/blog/
+          weight: 30
+```
+
+Warning : in case of multilingual support, the article will have to be in all languages folders if they're intended to be display for each of them. Refer to the [Multilingual mode](https://gohugo.io/content-management/multilingual/) Hugo documentation.
+
+3. Create your first blog entry.
+
+```bash
+hugo new --kind blog blog/my-first-post.md
 ```
 
 ## Books management

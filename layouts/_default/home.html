@@ -32,34 +32,54 @@
     </div>
   {{ end }}
 
-  {{ if .Site.Params.mastodon }}
+  {{ if or (.Site.Params.mastodon) (.Site.Params.blog) }}
     <h1>{{ i18n "home.latestnews" }}</h1>
 
-  <p>
-    <div id="mastodon-feed" class="mastodon-feed"></div>
-    <script>
-      var i18n = {
-        followOnMastodon: "{{ i18n "home.followOnMastodon" }}",
-        viewOnMastodon: "{{ i18n "home.viewOnMastodon" }}",
-        publishedDateOnMastodon: "{{ i18n "home.publishedDateOnMastodon" }}",
-      };
-      var mastodonProfile = "{{ .Site.Params.mastodon }}";
-      var maxItems = "{{ .Site.Params.mastodonMaxItems }}";
-    </script>
-    {{- with resources.Get "js/mastodon.js" }}
-    {{- if eq hugo.Environment "development" }}
-      {{- with . | js.Build }}
-        <script src="{{ .RelPermalink }}"></script>
-      {{- end }}
-    {{- else }}
-      {{- $opts := dict "minify" true }}
-      {{- with . | js.Build $opts | fingerprint }}
-        <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{ if .Site.Params.blog }}
+    <h2>Blog</h2>
+    <ul class="blog-feed">
+      {{ range first 3 (where site.RegularPages "Section" "blog" ) }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date | time.Format ":date_short" }}
+        <br>{{ .Summary }}
+        <p class="read-more">
+          <a href="{{ .Permalink }}" class="read-more">{{ i18n "home.readMore" }}</a>
+        </p>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+
+    {{ if .Site.Params.mastodon }}
+    <h2>Mastodon</h2>
+    <p>
+      <div id="mastodon-feed" class="mastodon-feed"></div>
+      <script>
+        var i18n = {
+          followOnMastodon: "{{ i18n "home.followOnMastodon" }}",
+          viewOnMastodon: "{{ i18n "home.viewOnMastodon" }}",
+          publishedDateOnMastodon: "{{ i18n "home.publishedDateOnMastodon" }}",
+        };
+        var mastodonProfile = "{{ .Site.Params.mastodon }}";
+        var maxItems = "{{ .Site.Params.mastodonMaxItems }}";
+      </script>
+      {{- with resources.Get "js/mastodon.js" }}
+      {{- if eq hugo.Environment "development" }}
+        {{- with . | js.Build }}
+          <script src="{{ .RelPermalink }}"></script>
+        {{- end }}
+      {{- else }}
+        {{- $opts := dict "minify" true }}
+        {{- with . | js.Build $opts | fingerprint }}
+          <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+        {{- end }}
       {{- end }}
     {{- end }}
-  {{- end }}
 
-  </p>
+
+    </p>
+    {{ end }}
   {{ end }}
 
   {{ if .Site.Params.patreon }}

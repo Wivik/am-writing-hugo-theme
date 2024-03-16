@@ -327,6 +327,21 @@ div.page-count-popup:hover span.page-count-popup-content, .page-count-popup:acti
   visibility: visible;
 }
 
+/* blog */
+
+ul.blog-feed {
+  margin: 0;
+  padding: 0;
+}
+
+ul.blog-feed li {
+  list-style: none;
+  display: block;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-bottom: 1px solid var(--div-book-details-border-color);
+}
+
 /* mastodon feed */
 
 .mastodon-feed {

@@ -136,6 +136,7 @@ The theme supports the following settings :
 | ------- | -------- | ------------- | ----------- |
 | `params.author` | No | `none` | Your author name, your should set it. |
 | `params.avatar` | No | `none` | A picture expected to be in the `/static` folder. |
+| `params.bookListType` | No | `grid` | Change the book list style, default is thumbnail `grid` with description. Other option is `list` for the previous display way.<br>Possible values :<br>- `grid` (default)<br>- `list` |
 | `params.commission` | No | `false` | Display a button showing you're open for commissions. Possible values : `true` (commissions opened), `false` (commissions closed) |
 | `params.commissionLink` | No | `none` | The link to your commission platform. |
 | `params.contentLicense` | No | `none` | Display the license used for the website in the footer. Ex : CC BY-SA 4.0 |

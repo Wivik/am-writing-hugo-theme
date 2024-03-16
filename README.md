@@ -167,6 +167,17 @@ Dark
 
 [![Dark](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/dark-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/dark.png)
 
+### Book list layout
+
+The theme supports two layouts for the book list : grid (default) and list.
+
+Grid layout :
+
+[![Grid](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/grid-layout-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/grid-layout.png)
+
+List layout (previous one) :
+
+[![List](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/list-layout-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/list-layout.png)
 
 ### Override default profile
 

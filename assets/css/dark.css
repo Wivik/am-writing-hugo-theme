@@ -46,6 +46,9 @@
 
   --a-mastodon-follow-bg-color-hover: #3d414e;
 
+  --a-rss-bg-color: #16606d;
+  --a-rss-color: #eff1f5;
+  --a-rss-bg-color-hover: #0879a5;
 
   /* about */
   --p-disclaimer-font-color: #e59c36;

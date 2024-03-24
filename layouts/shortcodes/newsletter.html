@@ -1,0 +1,25 @@
+{{ if or .Site.Params.newsletterIntegrationCode .Site.Params.newsletterSubscriptionLink }}
+<h2>{{ i18n "subscribe.newsletter" }}</h2>
+
+{{ if .Site.Params.newsletterSubscriptionLink }}
+
+<p>{{ i18n "subscribe.newsletterDescr" }}</p>
+
+<p>
+    <a href="{{ .Site.Params.newsletterSubscriptionLink }}" rel="noopener noreferrer" class="support-button rss-button" style="color: var(--body-font-color);" title="{{ i18n "about.subscribeNLDescription" }}">{{ i18n "subscribe.subscribe" }}</a>
+</p>
+
+<p>{{ i18n "subscribe.newsletterGDPR" }}</p>
+
+{{ else }}
+
+<p>{{ i18n "subscribe.newsletterDescr" }}</p>
+
+<p>
+    {{ .Site.Params.newsletterIntegrationCode | safeHTML }}
+</p>
+
+<p>{{ i18n "subscribe.newsletterGDPR" }}</p>
+
+{{ end }}
+{{ end }}

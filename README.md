@@ -143,12 +143,14 @@ The theme supports the following settings :
 | `params.commission` | No | `false` | Display a button showing you're open for commissions. Possible values : `true` (commissions opened), `false` (commissions closed) |
 | `params.commissionLink` | No | `none` | The link to your commission platform. |
 | `params.contentLicense` | No | `none` | Display the license used for the website in the footer. Ex : CC BY-SA 4.0 |
-| `params.displaySubscribeButton` | No | `true` | Display the RSS subscribe buttons on the About left section. The RSS link is for the books release. If the blog is enabled, another button will be display too. Same for the newsletter link. |
-| `params.newsletterSubscriptionLink` | No | `none` | The link to your Newsletter subscription page. |
+| `params.displaySubscribeButton` | No | `false` | Along with the usage of the `subscribe-example.md` page you would put in your `content` direct and rename, this option will enable a 'Subscribe' button redirecting to the subscribe page. See [Subscribe to the site's content](#subscribe-to-the-sites-content) for more details. |
+| `params.displaySubscribeRSS` | No | `true` | Display the RSS subscribe buttons on the About left section. The RSS link is for the books release. If the blog is enabled, another button will be display too. Same for the newsletter link. |
 | `params.goodreads` | No | `none` | Your GoodReads profile URL |
 | `params.kofi` | No | `none` | Your Ko-fi profile URL |
 | `params.mastodon` | No | `none` | The URL of your Mastodon profile. |
 | `params.mastodonMaxItems` | No | `5` | How much posts you want to display in your feed. |
+| `params.newsletterIntegrationCode` | No | `none` | Using the multiline yaml syntax to paste here the integration code for your newsletter subscription. |
+| `params.newsletterSubscriptionLink` | No | `none` | The link to your Newsletter subscription page. **This setting has the precedence over the newsletter integration in the Susbcription page.** Meaning if you set both, the link to the newsletter subscription will be displayed but not the integrated form. |
 | `params.pageCountisEstimated` | No | `false` | If set to true, this will add a small pop-up on the number of Pages displayed on the book details indicating the page count is an estimation. This is recommended if you only publish epub files because unlike physical copies, they does not have actual defined pages layout. <br>The default estimation is said to be based on 280 words per pages (see my [epub metadata exporter tool](https://github.com/Wivik/epub-metadata-exporter) for more). You may adapt this message in the `i18n` translation. |
 | `params.patreon` | No | `none` | Your Patreon profile URL |
 | `params.theme` | No | `nord` | Use one of the built-in themes :<br>- `nord`<br>- `catpuccin-latte`<br>- `catpuccin-frappe` |
@@ -255,6 +257,28 @@ Warning : in case of multilingual support, the article will have to be in all la
 ```bash
 hugo new --kind blog blog/my-first-post.md
 ```
+
+### Subscribe to the site's content
+
+This feature was made to generate a "how to subscribe to this content" page. Basically, it's an agregate of your various communication channels for your audience.
+
+To enable this feature, first you need to set `params.displaySubscribeButton` to `true` in `hugo.yaml`. The following button will appear :
+
+[![subscribe](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/subscribe-button.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/subscribe-button.png)
+
+Then, mode `subscribe-example.md` available in with this theme to your `content/` folder and name it `subscribe.md`. Attention, if your site is multilingual, you need to copy it in each language folder. Such as `content/fr/subscribe.md` and `content/en/subscribe.md`.
+
+[![subscribe](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/subscribe-page-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/subscribe-page.png)
+
+This page is basically a list of Hugo Shortcodes that will display the following elements :
+
+- `this_site` : a simple explanation about registering the site in the user's bookmarks.
+- `rss_books` : a RSS feed for the books only
+- `rss_blog` : a RSS feed for the [Blog](#blog) feature. Will be displayed only if the blog is enabled.
+- `newsletter` : the integration code for your newsletter provider. Will integrate the code provided in `params.newsletterIntegrationCode`.
+- `fediverse` : a link to your Mastodon account if defined in the settings.
+
+All descriptions displayed in these pages can be overrided in the related `i18n` file.
 
 ## Books management
 

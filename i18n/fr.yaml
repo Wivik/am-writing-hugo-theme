@@ -46,7 +46,25 @@ about:
   subscribeBooksReleaseDescription: "Suivez le fil RSS qui vous informera des nouveaux livres publiés."
   subscribeBlogReleaseDescription: "Suivez le fil RSS des articles du blog."
   subscribeNLDescription: "Inscrivez-vous aux notifications de nouvelles sorties par e-mail."
+  subscribe: "Suivre les nouveautés"
+  subscribeDescription: "Retrouvez comment suivre le contenu publié sur ce site."
+  newsletter: "E-mail"
 
+subscribe:
+  title: "Suivre les nouveautés"
+  subscribe: "S'abonner"
+  descr: "Retrouvez comment suivre le contenu publié sur ce site."
+  newsletter: "E-mail"
+  newsletterDescr: "Abonnez-vous aux nouvelles publications de livres par e-mail. Ceci n'est pas une newsletter, mais une simple notification de sortie. Pas plus !"
+  newsletterGDPR: "Votre adresse de messagerie est uniquement utilisée pour vous envoyer une information lors de la publication d'un nouveau livre. Vous pouvez à tout moment utiliser le lien de désabonnement intégré dans chacun de nos mails."
+  thisSite: "Ce site web"
+  thisSiteDescr: "Vous pouvez suivre le contenu en mettant tout simplement ce site en favori et en le consultant régulièrement."
+  rssBooks: "Fil RSS des livres"
+  rssBooksDescr: "Si vous utilisez un agrégateur de fils RSS, vous pouvez souscrire a celui des publications de livres avec le bouton ci-dessous."
+  rssBlog: "Fil RSS du blog"
+  rssBlogDescr: "Si vous utilisez un agrégateur de fils RSS, vous pouvez souscrire a celui des publications des articles du blog avec le bouton ci-dessous."
+  fediverse: "Fediverse"
+  fediverseDescr: "Vous pouvez me suivre sur le Fediverse en vous abonnant à mon profil Mastodon."
 
 footer:
   copyright: "Tous droits réservés."

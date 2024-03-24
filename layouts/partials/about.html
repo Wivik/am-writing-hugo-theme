@@ -47,6 +47,13 @@
         {{ end }}
     </p>
 
+    {{ $displaySubscribeButton := default .Site.Params.displaySubscribeButton true }}
+    {{ if $displaySubscribeButton }}
+    <p class="rss-subscribe">
+        <a href="{{ .Site.BaseURL }}{{ .Lang }}/subscribe/" rel="noopener noreferrer" class="support-button rss-button" title="{{ i18n "about.subscribeDescription" }}">{{ i18n "about.subscribe" }}</a>
+    </p>
+    {{ end }}
+
     {{ if .Site.Params.patreon }}
     <p>
         <a href="{{ .Site.Params.patreon }}" rel="noopener noreferrer" class="support-button patreon-button">{{ i18n "about.patreon" }}</a>

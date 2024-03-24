@@ -47,6 +47,26 @@ about:
   subscribeBooksReleaseDescription: "Subscribe to the new books release using RSS."
   subscribeBlogReleaseDescription: "Subscribe to the new blog articles using RSS."
   subscribeNLDescription: "Subscribe to the new books notifications by e-mail."
+  subscribe: "Subscribe"
+  subscribeDescription: "Find how to subscribe to this website content."
+  newsletter: "E-mail"
+
+subscribe:
+  title: "Subscribe to the news"
+  subscribe: "Subscribe"
+  descr: "Find here how to subscribe to this website content."
+  newsletter: "E-mail"
+  newsletterGDPR: "You messaging address will be used only to send you a notification when a new book is published. You may unsubscribe anytime by using the link available in the emails."
+  newsletterDescr: "Subscribe to the new books release by e-mail. This is not a newsletter, just a simple publication notice. Nothing more !"
+  thisSite: "This website"
+  thisSiteDescr: "You may follow this website content by just adding it in your bookmarks and consulting it regularly."
+  rssBooks: "Books RSS Feed"
+  rssBooksDescr: "If you use a RSS feed agregator, you may subscribe to the books release feed with the button below."
+  rssBlog: "Blog RSS Feed"
+  rssBlogDescr: "If you use a RSS feed agregator, you may subscribe to the blog article publications feed with the button below."
+  fediverse: "Fediverse"
+  fediverseDescr: "You can follow me on the Fediverse on my Mastodon account."
+
 
 footer:
   copyright: "All rights reserved."

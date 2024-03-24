@@ -1,0 +1,9 @@
+{{ if .Site.Params.mastodon }}
+<h2>{{ i18n "subscribe.fediverse" }}</h2>
+
+<p>{{ i18n "subscribe.fediverseDescr" }}</p>
+
+<p>
+    <a href="{{ .Site.Params.mastodon }}" rel="noopener noreferrer" class="support-button rss-button" style="color: var(--body-font-color);">{{ i18n "home.followOnMastodon" }}</a>
+</p>
+{{ end }}

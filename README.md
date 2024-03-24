@@ -17,6 +17,8 @@ Am Writing supports :
 - Various book metadata for a standard display page
 - Fully customizable
 - Display by book genre
+- Your personal author blog
+- RSS support
 
 ![Screenshot2](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/screenshot2.png)
 

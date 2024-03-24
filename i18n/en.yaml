@@ -44,6 +44,8 @@ about:
   commission: "Commissions open!"
   legal-notice: |
     The stories and characters in XXXXXXX's books are purely fictional. Any resemblance to existing or former persons is purely coincidental.
+  subscribeBooksReleaseDescription: "Subscribe to the new books release using RSS."
+  subscribeBlogReleaseDescription: "Subscribe to the new blog articles using RSS."
 
 footer:
   copyright: "All rights reserved."

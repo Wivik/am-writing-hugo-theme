@@ -24,10 +24,13 @@
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
-      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      <pubDate>{{ if .Params.PublishedOn }}{{ .Params.PublishedOn | time.Format ":date_short" | safeHTML }}{{ else }}{{ .Date | time.Format ":date_short" | safeHTML }}{{ end }}</pubDate>
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ .Content | html }}</description>
+      <description>{{ if eq .Section "books" }}{{ .Params.description | html }}{{ else }}{{ .Content | html }}{{ end }}</description>
+      {{ if .Params.cover }}
+      <enclosure url="{{ .Site.BaseURL }}/books/{{ .Params.cover }}" type="image/jpeg" />
+      {{ end }}
     </item>
     {{ end }}
   </channel>

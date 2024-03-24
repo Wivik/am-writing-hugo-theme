@@ -489,6 +489,36 @@ a.commission-button:hover {
   background-color: var(--a-commission-bg-color-hover);
 }
 
+p.rss-subscribe {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 15rem;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+a.rss-button {
+  background-color: var(--a-rss-bg-color);
+  color: var(--a-rss-color);
+  min-width: 6rem;
+  flex: 1;
+  margin: 0.1rem;
+  display: flex;
+  justify-content: center;
+}
+
+a.rss-button svg {
+  margin: 0.1rem;
+}
+
+a.rss-button:active,
+a.rss-button:active:focus,
+a.rss-button:hover {
+  background-color: var(--a-rss-bg-color-hover);
+}
+
 p.disclaimer {
   text-align: left;
   color: var(--p-disclaimer-font-color);

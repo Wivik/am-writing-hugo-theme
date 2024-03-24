@@ -141,6 +141,7 @@ The theme supports the following settings :
 | `params.commission` | No | `false` | Display a button showing you're open for commissions. Possible values : `true` (commissions opened), `false` (commissions closed) |
 | `params.commissionLink` | No | `none` | The link to your commission platform. |
 | `params.contentLicense` | No | `none` | Display the license used for the website in the footer. Ex : CC BY-SA 4.0 |
+| `params.displaySubscribeRSS` | No | `false` | Display the RSS subscribe buttons on the About left section. The RSS link is for the books release. If the blog is enabled, another button will be display too. |
 | `params.goodreads` | No | `none` | Your GoodReads profile URL |
 | `params.kofi` | No | `none` | Your Ko-fi profile URL |
 | `params.mastodon` | No | `none` | The URL of your Mastodon profile. |

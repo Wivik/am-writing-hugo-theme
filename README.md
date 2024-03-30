@@ -152,7 +152,7 @@ The theme supports the following settings :
 | `params.newsletterIntegrationCode` | No | `none` | Using the multiline yaml syntax to paste here the integration code for your newsletter subscription. |
 | `params.newsletterSubscriptionLink` | No | `none` | The link to your Newsletter subscription page. **This setting has the precedence over the newsletter integration in the Susbcription page.** Meaning if you set both, the link to the newsletter subscription will be displayed but not the integrated form. |
 | `params.pageCountisEstimated` | No | `false` | If set to true, this will add a small pop-up on the number of Pages displayed on the book details indicating the page count is an estimation. This is recommended if you only publish epub files because unlike physical copies, they does not have actual defined pages layout. <br>The default estimation is said to be based on 280 words per pages (see my [epub metadata exporter tool](https://github.com/Wivik/epub-metadata-exporter) for more). You may adapt this message in the `i18n` translation. |
-| `params.patreon` | No | `none` | Your Patreon profile URL |
+| `params.patreon` | No | `none` | Your Patreon profile URL. You need a picture for the homepage, save it as `patreon.jpg` in the `static/` folder. |
 | `params.theme` | No | `nord` | Use one of the built-in themes :<br>- `nord`<br>- `catpuccin-latte`<br>- `catpuccin-frappe` |
 | `params.themeFont` | No | `serif` | Use the Serif or Sans Serif font. Available options :<br>- `serif`<br>- `sans-serif` |
 

@@ -147,6 +147,7 @@ The theme supports the following settings :
 | `params.displaySubscribeRSS` | No | `true` | Display the RSS subscribe buttons on the About left section. The RSS link is for the books release. If the blog is enabled, another button will be display too. Same for the newsletter link. |
 | `params.goodreads` | No | `none` | Your GoodReads profile URL |
 | `params.kofi` | No | `none` | Your Ko-fi profile URL |
+| `params.liberapay` | No | `none` | Your Liberapay support URL |
 | `params.mastodon` | No | `none` | The URL of your Mastodon profile. |
 | `params.mastodonMaxItems` | No | `5` | How much posts you want to display in your feed. |
 | `params.newsletterIntegrationCode` | No | `none` | Using the multiline yaml syntax to paste here the integration code for your newsletter subscription. |

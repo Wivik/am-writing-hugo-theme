@@ -51,6 +51,12 @@ about:
   subscribe: "Subscribe"
   subscribeDescription: "Find how to subscribe to this website content."
   newsletter: "E-mail"
+  authorBio: "About author"
+  whereToFindMe: "Where to fine me"
+  whereToReadMe: "Where to read me"
+  support: "Support me"
+  keepInformed: "Keep informed"
+  moreContact: "Contact"
 
 subscribe:
   title: "Subscribe to the news"

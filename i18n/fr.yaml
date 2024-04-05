@@ -50,6 +50,12 @@ about:
   subscribe: "Suivre les nouveautés"
   subscribeDescription: "Retrouvez comment suivre le contenu publié sur ce site."
   newsletter: "E-mail"
+  authorBio: "À propos de moi"
+  whereToFindMe: "Où me trouver"
+  whereToReadMe: "Où me lire"
+  support: "Me soutenir"
+  keepInformed: "Suivre mes actualités"
+  moreContact: "Contact"
 
 subscribe:
   title: "Suivre les nouveautés"

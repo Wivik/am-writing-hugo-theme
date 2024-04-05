@@ -2,9 +2,71 @@
     <a href="{{ .Site.BaseURL }}">
         <img src="{{ .Site.BaseURL }}/{{ .Site.Params.avatar }}" alt="{{ .Site.Params.author }}" title="{{ .Site.Params.author }}" class="avatar" />
     </a>
-    <h1>{{ .Site.Params.author }}</h1>
+    <h1 class="about">{{ .Site.Params.author }}</h1>
+
+    {{- with resources.Get "img/fr.svg" }}
+    <p>
+    <a href="{{ replace $.Permalink "/en/" "/fr/" }}"><img src="{{ .RelPermalink }}" alt="Français" height="20"></a>&nbsp;
+    {{ end }}
+    {{ if  .IsTranslated }}
+        {{- with resources.Get "img/en.svg" }}
+        <a href="{{ replace $.Permalink "/fr/" "/en/" }}"><img src="{{ .RelPermalink }}" alt="English" height="20"></a>
+        {{ end }}
+    {{ else }}
+        {{- with resources.Get "img/en.svg" }}
+        <a href="{{ $.Site.BaseURL }}en"><img src="{{ .RelPermalink }}" alt="English" height="20"></a>
+        {{ end }}
+    </p>
+    {{ end }}
+
+
+    <h2 class="about">{{ i18n "about.authorBio" }}</h2>
+
+    <div class="about-author">{{ i18n "about.author" | markdownify }}</div>
+
+    {{ if or (.Site.Params.books2readProfile) (.Site.Params.amazonAuthorProfile) }}
+    <h2 class="about">{{ i18n "about.whereToReadMe" }}</h2>
+    <p>
+        {{ if .Site.Params.books2readProfile }}
+        <a rel="me" href="{{ .Site.Params.books2readProfile }}" class="social-button" title="Books2Read">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M3 18.5V5C3 3.34315 4.34315 2 6 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22H6.5C4.567 22 3 20.433 3 18.5ZM19 20V17H6.5C5.67157 17 5 17.6716 5 18.5C5 19.3284 5.67157 20 6.5 20H19ZM5 15.3368C5.45463 15.1208 5.9632 15 6.5 15H19V4H6C5.44772 4 5 4.44772 5 5V15.3368Z"></path></svg>
+        </a>
+        {{ end }}
+
+        {{ if .Site.Params.amazonAuthorProfile }}
+        <a href="{{ .Site.Params.amazonAuthorProfile }}" rel="noopener noreferrer" class="social-button" title="Amazon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M15.6262 14.6201C14.5191 16.2386 12.8976 17.0042 11.0007 17.0042C8.69659 17.0042 6.7243 15.2315 7.00788 12.8803C7.32248 10.272 9.34731 9.14962 12.716 8.73726C13.3171 8.66367 13.566 8.64299 14.8629 8.54691C14.9116 8.54331 14.9575 8.53988 15.001 8.5366C15.0008 8.46544 15.0007 8.39386 15.0007 8.32185C15.0007 6.52595 13.9328 5.30005 12.5007 5.30005C11.0638 5.30005 10.0603 6.0474 9.44592 7.82645L7.55546 7.17365C8.44288 4.60377 10.1935 3.30005 12.5007 3.30005C15.1034 3.30005 17.0007 5.47803 17.0007 8.32185C17.0007 10.9707 17.164 13.0776 17.484 13.8794C17.84 14.7715 17.9698 14.9959 18.3677 15.4921L16.8075 16.7434C16.2843 16.091 16.0549 15.6945 15.6264 14.6207L15.6262 14.6201ZM21.2572 20.5453C20.9864 20.7452 20.5157 20.6263 20.7288 20.1048C20.9934 19.4569 21.2755 18.6971 20.9911 18.3527C20.7807 18.098 20.5235 17.9711 19.9637 17.9711C19.5041 17.9711 19.2733 18.0305 18.9688 18.0508C18.7646 18.0645 18.6753 17.7537 18.8775 17.6109C19.1393 17.426 19.4216 17.2811 19.7483 17.1833C20.8979 16.8389 22.253 17.0276 22.4172 17.2658C22.7826 17.7959 22.2189 19.835 21.2572 20.5453ZM20.0754 19.4608C19.8136 19.7164 19.5299 19.9496 19.2462 20.156C17.1235 21.7716 14.3748 22.6169 11.9875 22.6169C8.14505 22.6169 4.70765 20.8226 2.10014 17.8212C1.87644 17.5906 2.06133 17.2555 2.32314 17.4369C5.13247 19.5136 8.6108 20.7699 12.2112 20.7699C14.4772 20.7699 16.9195 20.2329 19.2462 19.0775C19.4085 19.0007 19.5906 18.8961 19.7501 18.8228C20.117 18.6128 20.4395 19.1293 20.0754 19.4608ZM15.0107 10.5414C13.7522 10.6347 13.5147 10.6544 12.959 10.7224C10.4062 11.0349 9.16175 11.7247 8.99349 13.1198C8.86763 14.1633 9.80321 15.0042 11.0007 15.0042C13.0397 15.0042 14.5179 13.7764 15.0227 10.5406C15.0187 10.5409 15.0147 10.5411 15.0107 10.5414Z"></path></svg>
+        </a>
+        {{ end }}
+
+        {{ if .Site.Params.kofi }}
+        <a href="{{ .Site.Params.kofi }}" rel="noopener noreferrer" class="social-button" title="Ko-Fi">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36"><path d="M16 13V5H6V13C6 14.1046 6.89543 15 8 15H14C15.1046 15 16 14.1046 16 13ZM5 3H20C21.1046 3 22 3.89543 22 5V8C22 9.10457 21.1046 10 20 10H18V13C18 15.2091 16.2091 17 14 17H8C5.79086 17 4 15.2091 4 13V4C4 3.44772 4.44772 3 5 3ZM18 5V8H20V5H18ZM2 19H20V21H2V19Z" fill="rgba(236,239,244,1)"></path></svg>
+        </a>
+        {{ end }}
+
+        {{ if .Site.Params.googlePlayAuthorProfile }}
+        <a href="{{ .Site.Params.googlePlayAuthorProfile }}" rel="noopener noreferrer" class="social-button" title="Google Play Books">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M4.00098 1.73438C4.17692 1.73438 4.34975 1.7808 4.50201 1.86895L20.5061 11.1345C20.9841 11.4112 21.1473 12.023 20.8705 12.501C20.783 12.6522 20.6574 12.7778 20.5061 12.8654L4.50201 22.1309C4.02405 22.4076 3.41226 22.2445 3.13555 21.7665C3.0474 21.6143 3.00098 21.4414 3.00098 21.2655V2.73438C3.00098 2.18209 3.44869 1.73438 4.00098 1.73438ZM12.2931 13.4132L7.79498 17.9124L13.494 14.6134L12.2931 13.4132ZM4.99998 6.11938V17.8784L10.8791 11.9992L4.99998 6.11938ZM15.284 10.4214L13.7071 11.9992L15.285 13.5764L18.009 11.9999L15.284 10.4214ZM7.79398 6.08537L12.2931 10.5852L13.493 9.38437L7.79398 6.08537Z"></path></svg>
+        </a>
+        {{ end }}
+
+        {{ if .Site.Params.xinxiiAuthorProfile }}
+        <a href="{{ .Site.Params.xinxiiAuthorProfile }}" rel="noopener noreferrer" class="social-button" title="Xinxii">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"></path></svg>
+        </a>
+        {{ end }}
+
+        {{ if .Site.Params.neovelAuthorProfile }}
+        <a href="{{ .Site.Params.neovelAuthorProfile }}" rel="noopener noreferrer" class="social-button" title="Neovel">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M21 4H7C5.89543 4 5 4.89543 5 6C5 7.10457 5.89543 8 7 8H21V21C21 21.5523 20.5523 22 20 22H7C4.79086 22 3 20.2091 3 18V6C3 3.79086 4.79086 2 7 2H20C20.5523 2 21 2.44772 21 3V4ZM5 18C5 19.1046 5.89543 20 7 20H19V10H7C6.27143 10 5.58835 9.80521 5 9.46487V18ZM20 7H7C6.44772 7 6 6.55228 6 6C6 5.44772 6.44772 5 7 5H20V7Z"></path></svg>
+        </a>
+        {{ end }}
+    </p>
+    {{ end }}
 
     {{ if or (.Site.Params.mastodon) (.Site.Params.patreon) (.site.Params.Kofi) (.Site.Params.goodreads ) }}
+    <h2 class="about">{{ i18n "about.whereToFindMe" }}</h2>
     <p>
         {{ if .Site.Params.mastodon }}
         <a rel="me" href="{{ .Site.Params.mastodon }}" class="social-button" title="Mastodon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36"><path d="M21.2595 13.9898C20.9852 15.4006 18.8033 16.9446 16.2974 17.2439C14.9907 17.3998 13.7041 17.5431 12.3321 17.4802C10.0885 17.3774 8.31809 16.9446 8.31809 16.9446C8.31809 17.163 8.33156 17.371 8.3585 17.5655C8.65019 19.7797 10.5541 19.9124 12.3576 19.9742C14.1779 20.0365 15.7987 19.5254 15.7987 19.5254L15.8735 21.1711C15.8735 21.1711 14.6003 21.8548 12.3321 21.9805C11.0814 22.0493 9.52849 21.9491 7.71973 21.4703C3.79684 20.432 3.12219 16.2504 3.01896 12.0074C2.98749 10.7477 3.00689 9.55981 3.00689 8.56632C3.00689 4.22771 5.84955 2.95599 5.84955 2.95599C7.2829 2.29772 9.74238 2.0209 12.2993 2H12.3621C14.919 2.0209 17.3801 2.29772 18.8133 2.95599C18.8133 2.95599 21.6559 4.22771 21.6559 8.56632C21.6559 8.56632 21.6916 11.7674 21.2595 13.9898ZM18.3029 8.9029C18.3029 7.82924 18.0295 6.97604 17.4805 6.34482C16.9142 5.71359 16.1726 5.39001 15.2522 5.39001C14.187 5.39001 13.3805 5.79937 12.8473 6.61819L12.3288 7.48723L11.8104 6.61819C11.2771 5.79937 10.4706 5.39001 9.40554 5.39001C8.485 5.39001 7.74344 5.71359 7.17719 6.34482C6.62807 6.97604 6.3547 7.82924 6.3547 8.9029V14.1562H8.43597V9.05731C8.43597 7.98246 8.88822 7.4369 9.79281 7.4369C10.793 7.4369 11.2944 8.08408 11.2944 9.36376V12.1547H13.3634V9.36376C13.3634 8.08408 13.8646 7.4369 14.8648 7.4369C15.7694 7.4369 16.2216 7.98246 16.2216 9.05731V14.1562H18.3029V8.9029Z" fill="rgba(236,239,244,1)"></path></svg></a>
@@ -27,54 +89,25 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM11 5H4V19H11V5ZM13 5V19H20V5H13ZM14 7H19V9H14V7ZM14 10H19V12H14V10Z"></path></svg>
         </a>
         {{ end }}
+
+        {{ if .Site.Params.neovelAuthorProfile }}
+        <a href="{{ .Site.Params.neovelAuthorProfile }}" rel="noopener noreferrer" class="social-button" title="Neovel">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M21 4H7C5.89543 4 5 4.89543 5 6C5 7.10457 5.89543 8 7 8H21V21C21 21.5523 20.5523 22 20 22H7C4.79086 22 3 20.2091 3 18V6C3 3.79086 4.79086 2 7 2H20C20.5523 2 21 2.44772 21 3V4ZM5 18C5 19.1046 5.89543 20 7 20H19V10H7C6.27143 10 5.58835 9.80521 5 9.46487V18ZM20 7H7C6.44772 7 6 6.55228 6 6C6 5.44772 6.44772 5 7 5H20V7Z"></path></svg>
+        </a>
+        {{ end }}
+
+        <p class="rss-subscribe">
+            <a href="{{ .Site.BaseURL }}{{ .Lang }}/contact/" rel="noopener noreferrer" class="support-button rss-button" title="{{ i18n "about.moreContact" }}">{{ i18n "about.moreContact" }}</a>
+        </p>
+
     </p>
     {{ end }}
-
-    <div class="about-author">{{ i18n "about.author" | markdownify }}</div>
-    
-    <p>
-        {{- with resources.Get "img/fr.svg" }}
-        <a href="{{ replace $.Permalink "/en/" "/fr/" }}"><img src="{{ .RelPermalink }}" alt="Français" height="20"></a>&nbsp;
-        {{ end }}
-        {{ if  .IsTranslated }}
-            {{- with resources.Get "img/en.svg" }}
-            <a href="{{ replace $.Permalink "/fr/" "/en/" }}"><img src="{{ .RelPermalink }}" alt="English" height="20"></a>
-            {{ end }}
-        {{ else }}
-            {{- with resources.Get "img/en.svg" }}
-            <a href="{{ $.Site.BaseURL }}en"><img src="{{ .RelPermalink }}" alt="English" height="20"></a>
-            {{ end }}
-        {{ end }}
-    </p>
 
     {{ $displaySubscribeButton := default .Site.Params.displaySubscribeButton true }}
     {{ if $displaySubscribeButton }}
+    <h2 class="about">{{ i18n "about.keepInformed" }}</h2>
     <p class="rss-subscribe">
         <a href="{{ .Site.BaseURL }}{{ .Lang }}/subscribe/" rel="noopener noreferrer" class="support-button rss-button" title="{{ i18n "about.subscribeDescription" }}">{{ i18n "about.subscribe" }}</a>
-    </p>
-    {{ end }}
-
-    {{ if .Site.Params.patreon }}
-    <p>
-        <a href="{{ .Site.Params.patreon }}" rel="noopener noreferrer" class="support-button patreon-button">{{ i18n "about.patreon" }}</a>
-    </p>
-    {{ end }}
-
-    {{ if .Site.Params.kofi }}
-    <p>
-        <a href="{{ .Site.Params.kofi }}" rel="noopener noreferrer" class="support-button kofi-button">{{ i18n "about.kofi" }}</a>
-    </p>
-    {{ end }}
-
-    {{ if .Site.Params.liberapay }}
-    <p>
-        <a href="{{ .Site.Params.liberapay }}" rel="noopener noreferrer" class="support-button liberapay-button">{{ i18n "about.liberapay" }}</a>
-    </p>
-    {{ end }}
-
-    {{ if .Site.Params.commission }}
-    <p>
-        <a href="{{ .Site.Params.commissionLink }}" rel="noopener noreferrer" class="support-button commission-button">{{ i18n "about.commission" }}</a>
     </p>
     {{ end }}
 
@@ -102,6 +135,34 @@
 
     </p>
     {{ end }}
+
+    <h2 class="about">{{ i18n "about.support" }}</h2>
+
+    {{ if .Site.Params.patreon }}
+    <p>
+        <a href="{{ .Site.Params.patreon }}" rel="noopener noreferrer" class="support-button patreon-button">{{ i18n "about.patreon" }}</a>
+    </p>
+    {{ end }}
+
+    {{ if .Site.Params.kofi }}
+    <p>
+        <a href="{{ .Site.Params.kofi }}" rel="noopener noreferrer" class="support-button kofi-button">{{ i18n "about.kofi" }}</a>
+    </p>
+    {{ end }}
+
+    {{ if .Site.Params.liberapay }}
+    <p>
+        <a href="{{ .Site.Params.liberapay }}" rel="noopener noreferrer" class="support-button liberapay-button">{{ i18n "about.liberapay" }}</a>
+    </p>
+    {{ end }}
+
+    {{ if .Site.Params.commission }}
+    <p>
+        <a href="{{ .Site.Params.commissionLink }}" rel="noopener noreferrer" class="support-button commission-button">{{ i18n "about.commission" }}</a>
+    </p>
+    {{ end }}
+
+
 
     <p class="disclaimer">{{ i18n "about.disclaimer" | markdownify }}</p>
 

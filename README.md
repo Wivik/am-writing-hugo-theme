@@ -156,6 +156,11 @@ The theme supports the following settings :
 | `params.patreon` | No | `none` | Your Patreon profile URL. You need a picture for the homepage, save it as `patreon.jpg` in the `static/` folder. |
 | `params.theme` | No | `nord` | Use one of the built-in themes :<br>- `nord`<br>- `catpuccin-latte`<br>- `catpuccin-frappe` |
 | `params.themeFont` | No | `serif` | Use the Serif or Sans Serif font. Available options :<br>- `serif`<br>- `sans-serif` |
+| `params.books2readProfile` | No | `none` | URL to your Books2Read profile |
+| `params.amazonAuthorProfile` | No | `none` | URL to your Amazon Author profile |
+| `params.googlePlayAuthorProfile` | No | `none` | URL to your Google Play Books profile |
+| `params.xinxiiAuthorProfile` | No | `none` | URL to your Xinxii profile |
+| `params.neovelAuthorProfile` | No | `none` | URL to your Neovel profile |
 
 ### Themes showcase
 

@@ -419,6 +419,17 @@ img.avatar {
   margin-right: auto;
 }
 
+h1.about {
+  font-size: 1.5rem;
+}
+
+h2.about {
+  text-align: left;
+  font-size: 1.1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--a-menu-border-color);
+}
+
 div.about-author {
   text-align: left;
 }

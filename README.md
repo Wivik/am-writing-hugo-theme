@@ -136,31 +136,31 @@ The theme supports the following settings :
 
 | Setting | Required | Default value | Description |
 | ------- | -------- | ------------- | ----------- |
+| `params.amazonAuthorProfile` | No | `none` | URL to your Amazon Author profile |
 | `params.author` | No | `none` | Your author name, your should set it. |
 | `params.avatar` | No | `none` | A picture expected to be in the `/static` folder. |
 | `params.blog` | No | `false` | Enable or disable the blog feature.<br>Supported parameters :<br> - `true`<br>- `false` (default)<br>See [Blog feature](#Blog) for how to use. |
 | `params.bookListType` | No | `grid` | Change the book list style, default is thumbnail `grid` with description. Other option is `list` for the previous display way.<br>Possible values :<br>- `grid` (default)<br>- `list` |
+| `params.books2readProfile` | No | `none` | URL to your Books2Read profile |
 | `params.commission` | No | `false` | Display a button showing you're open for commissions. Possible values : `true` (commissions opened), `false` (commissions closed) |
 | `params.commissionLink` | No | `none` | The link to your commission platform. |
 | `params.contentLicense` | No | `none` | Display the license used for the website in the footer. Ex : CC BY-SA 4.0 |
 | `params.displaySubscribeButton` | No | `false` | Along with the usage of the `subscribe-example.md` page you would put in your `content` direct and rename, this option will enable a 'Subscribe' button redirecting to the subscribe page. See [Subscribe to the site's content](#subscribe-to-the-sites-content) for more details. |
 | `params.displaySubscribeRSS` | No | `true` | Display the RSS subscribe buttons on the About left section. The RSS link is for the books release. If the blog is enabled, another button will be display too. Same for the newsletter link. |
 | `params.goodreads` | No | `none` | Your GoodReads profile URL |
+| `params.googlePlayAuthorProfile` | No | `none` | URL to your Google Play Books profile |
 | `params.kofi` | No | `none` | Your Ko-fi profile URL |
 | `params.liberapay` | No | `none` | Your Liberapay support URL |
 | `params.mastodon` | No | `none` | The URL of your Mastodon profile. |
 | `params.mastodonMaxItems` | No | `5` | How much posts you want to display in your feed. |
+| `params.neovelAuthorProfile` | No | `none` | URL to your Neovel profile |
 | `params.newsletterIntegrationCode` | No | `none` | Using the multiline yaml syntax to paste here the integration code for your newsletter subscription. |
 | `params.newsletterSubscriptionLink` | No | `none` | The link to your Newsletter subscription page. **This setting has the precedence over the newsletter integration in the Susbcription page.** Meaning if you set both, the link to the newsletter subscription will be displayed but not the integrated form. |
 | `params.pageCountisEstimated` | No | `false` | If set to true, this will add a small pop-up on the number of Pages displayed on the book details indicating the page count is an estimation. This is recommended if you only publish epub files because unlike physical copies, they does not have actual defined pages layout. <br>The default estimation is said to be based on 280 words per pages (see my [epub metadata exporter tool](https://github.com/Wivik/epub-metadata-exporter) for more). You may adapt this message in the `i18n` translation. |
 | `params.patreon` | No | `none` | Your Patreon profile URL. You need a picture for the homepage, save it as `patreon.jpg` in the `static/` folder. |
 | `params.theme` | No | `nord` | Use one of the built-in themes :<br>- `nord`<br>- `catpuccin-latte`<br>- `catpuccin-frappe` |
 | `params.themeFont` | No | `serif` | Use the Serif or Sans Serif font. Available options :<br>- `serif`<br>- `sans-serif` |
-| `params.books2readProfile` | No | `none` | URL to your Books2Read profile |
-| `params.amazonAuthorProfile` | No | `none` | URL to your Amazon Author profile |
-| `params.googlePlayAuthorProfile` | No | `none` | URL to your Google Play Books profile |
 | `params.xinxiiAuthorProfile` | No | `none` | URL to your Xinxii profile |
-| `params.neovelAuthorProfile` | No | `none` | URL to your Neovel profile |
 
 ### Themes showcase
 
@@ -314,6 +314,7 @@ Variables documentation :
 | `isbn` | No | `1234567891237` | Your book's ISBN |
 | `language` | Yes | `EN` | The book's language. Required if multilingual and the book has a translation. |
 | `link` | No | `none`  | The link of your main selling place. Book2Read for example.<br>If missing, the page will display "Unavailable". |
+| `neovel` | No | `none` | The link to Neovel if you publish there. |
 | `pages` | No | `70` | How much pages the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
 | `patreon` | No | `none`  | The link to Patreon if you publish there. |
 | `publishedOn` | No | `{{ .Date }}` | The publication date of your book. Default to the page creation date if not provided. |

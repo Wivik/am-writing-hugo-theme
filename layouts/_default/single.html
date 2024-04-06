@@ -65,7 +65,7 @@
 
     </p>
 
-    {{ if or (.Params.amazon ) ( .Params.patreon ) ( .Params.kofi ) ( .Params.googlePlay ) ( .Params.xinxii ) }}
+    {{ if or (.Params.amazon ) ( .Params.patreon ) ( .Params.kofi ) ( .Params.googlePlay ) ( .Params.xinxii ) ( .Params.neovel ) }}
     <p>
       {{ i18n "book.alsoavailable" }} : <br />
       {{ if .Params.amazon }}
@@ -108,6 +108,11 @@
       </a>
       {{ end }}
 
+      {{ if .Params.neovel }}
+      <a href="{{ .Params.neovel }}" target="_blank" rel="noopener noreferrer" title="Neovel" class="book-link-name">
+        <span class="xinxii" style="font-family: sans-serif; font-style: italic;">N</span>
+      </a>
+      {{ end }}
 
     </p>
     {{ end }}

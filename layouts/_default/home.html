@@ -1,97 +1,23 @@
 {{ define "main" }}
 
-  <h1>{{ i18n "home.new-release" }}</h1>
-  {{ range first 1 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-    <div class="book-entry">
-      <div class="book-details">
-        <h2>{{ .Title }}
-          {{ if .Draft }}
-          [{{ i18n "book.draft" }}]
-        {{ end }}
-        </h2>
+  <div class="about-release">
+    {{ partial "bio.html" . }}
+    {{ partial "latestrelease.html" . }}
+  </div>
 
-        {{ if .Params.PublishedOn }}
-          <h3>{{ i18n "book.publishedDate" }} : {{ .Params.PublishedOn | time.Format ":date_short" }}</h3>
-        {{ else }}
-          <h3>{{ i18n "book.publishedDate" }} : {{ .Date | time.Format ":date_short" }}</h3>
-        {{ end }}
+  <div>
+    {{ partial "bookscaroussel.html" . }}
+  </div>
 
-        {{ if .Params.description }}
-          <p>{{ .Params.description | markdownify }}</p>
-        {{ end }}
 
-        <p class="read-more">
-          <a href="{{ .Permalink }}" class="read-more">{{ i18n "home.more" }}</a>
-        </p>
-      </div>
-      <div class="book-cover">
-        {{ if .Params.cover }}
-          <img src="{{ .Site.BaseURL }}/books/{{ .Params.cover }}" alt="{{ .Title }}">
-        {{ end }}
-      </div>
-    </div>
-  {{ end }}
 
-  {{ if or (.Site.Params.mastodon) (.Site.Params.blog) }}
+  <div>
     <h1>{{ i18n "home.latestnews" }}</h1>
+    <div class="lastnews">
+      {{ partial "mastodon.html" . }}
+      {{ partial "blog.html" . }}
 
-    {{ if .Site.Params.blog }}
-    <h2>Blog</h2>
-    <ul class="blog-feed">
-      {{ range first 3 (where site.RegularPages "Section" "blog" ) }}
-      <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date | time.Format ":date_short" }}
-        <br>{{ .Summary }}
-        <p class="read-more">
-          <a href="{{ .Permalink }}" class="read-more">{{ i18n "home.readMore" }}</a>
-        </p>
-      </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-
-
-    {{ if .Site.Params.mastodon }}
-    <h2>Mastodon</h2>
-    <p>
-      <div id="mastodon-feed" class="mastodon-feed"></div>
-      <script>
-        var i18n = {
-          followOnMastodon: "{{ i18n "home.followOnMastodon" }}",
-          viewOnMastodon: "{{ i18n "home.viewOnMastodon" }}",
-          publishedDateOnMastodon: "{{ i18n "home.publishedDateOnMastodon" }}",
-        };
-        var mastodonProfile = "{{ .Site.Params.mastodon }}";
-        var maxItems = "{{ .Site.Params.mastodonMaxItems }}";
-      </script>
-      {{- with resources.Get "js/mastodon.js" }}
-      {{- if eq hugo.Environment "development" }}
-        {{- with . | js.Build }}
-          <script src="{{ .RelPermalink }}"></script>
-        {{- end }}
-      {{- else }}
-        {{- $opts := dict "minify" true }}
-        {{- with . | js.Build $opts | fingerprint }}
-          <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
-        {{- end }}
-      {{- end }}
-    {{- end }}
-
-
-    </p>
-    {{ end }}
-  {{ end }}
-
-  {{ if .Site.Params.patreon }}
-  <hr />
-  
-  <p style="text-align: center;">
-    <a href="{{ .Site.Params.patreon }}" target="_blank" rel="noopener noreferrer">
-      <img src="{{ .Site.BaseURL }}/patreon.jpg" alt="Patreon" />
-    </a>
-    <br />{{ i18n "home.patreonpage" }}
-  </p>
-  {{ end }}
-
+    </div>
+  </div>
 
 {{ end }}

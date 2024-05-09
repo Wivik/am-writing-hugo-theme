@@ -1,14 +1,33 @@
-<p>Copyright {{ now.Year }}.
-    {{ if .Site.Params.contentLicense }}
-    {{ i18n "footer.licensedUnder" }} {{ .Site.Params.contentLicense }}
-    {{ else }}
-    {{ i18n "footer.copyright" }}
-    {{ end }}
-</p>
-<p class="footer-credits">
-    {{ i18n "footer.poweredBy" }} 
-    <a href="https://gohugo.io">Hugo</a> 
-    {{ i18n "footer.usingTheme" }} 
-    <a href="https://github.com/Wivik/am-writing-hugo-theme" target="_blank" rel="noopener noreferrer">Am Writing</a> 
-    {{ i18n "footer.themeLicensedUnder" }}
-</p>
+<div>
+    {{ partial "social.html" . }}
+</div>
+<div>
+    {{ partial "subscribe.html" . }}
+</div>
+<div>
+    {{ partial "support.html" . }}
+</div>
+<div>
+    <h2 class="about">{{ i18n "home.about" }}</h2>
+    <p>{{ i18n "about.legal-notice" | markdownify }}</p>
+    <p>{{ partial "disclaimer.html" . }}</p>
+    <p>
+        <a href="{{ .Site.BaseURL }}/{{ .Lang }}/legal/">{{ i18n "home.legal" }}</a>
+    </p>
+    
+    <p>
+        Copyright {{ now.Year }}.<br>
+        {{ if .Site.Params.contentLicense }}
+        {{ i18n "footer.licensedUnder" }} {{ .Site.Params.contentLicense }}
+        {{ else }}
+        {{ i18n "footer.copyright" }}
+        {{ end }}
+    </p>
+    <p class="footer-credits">
+        {{ i18n "footer.poweredBy" }} 
+        <a href="https://gohugo.io">Hugo</a> 
+        {{ i18n "footer.usingTheme" }} 
+        <a href="https://github.com/Wivik/am-writing-hugo-theme" target="_blank" rel="noopener noreferrer">Am Writing</a> 
+        {{ i18n "footer.themeLicensedUnder" }}
+    </p>
+</div>

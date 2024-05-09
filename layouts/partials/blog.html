@@ -1,0 +1,20 @@
+{{ if .Site.Params.blog }}
+<div class="lastnews-item">
+    <h1>{{ i18n "home.latestnews" }}</h1>
+
+    {{ if .Site.Params.blog }}
+    <h2>Blog</h2>
+    <ul class="blog-feed">
+      {{ range first 3 (where site.RegularPages "Section" "blog" ) }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date | time.Format ":date_short" }}
+        <br>{{ .Summary }}
+        <p class="read-more">
+          <a href="{{ .Permalink }}" class="read-more">{{ i18n "home.readMore" }}</a>
+        </p>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+</div>
+{{ end }}

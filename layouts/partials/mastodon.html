@@ -1,0 +1,30 @@
+{{ if .Site.Params.mastodon }}
+<div class="lastnews-item mastodon">
+    <h2>Mastodon</h2>
+    <p>
+      <div id="mastodon-feed" class="mastodon-feed"></div>
+      <script>
+        var i18n = {
+          followOnMastodon: "{{ i18n "home.followOnMastodon" }}",
+          viewOnMastodon: "{{ i18n "home.viewOnMastodon" }}",
+          publishedDateOnMastodon: "{{ i18n "home.publishedDateOnMastodon" }}",
+        };
+        var mastodonProfile = "{{ .Site.Params.mastodon }}";
+        var maxItems = "{{ .Site.Params.mastodonMaxItems }}";
+      </script>
+      {{- with resources.Get "js/mastodon.js" }}
+      {{- if eq hugo.Environment "development" }}
+        {{- with . | js.Build }}
+          <script src="{{ .RelPermalink }}"></script>
+        {{- end }}
+      {{- else }}
+        {{- $opts := dict "minify" true }}
+        {{- with . | js.Build $opts | fingerprint }}
+          <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+        {{- end }}
+      {{- end }}
+    {{- end }}
+    </p>
+</div>
+
+{{ end }}

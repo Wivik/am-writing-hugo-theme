@@ -5,13 +5,12 @@
 </head>
 <body>
   <main>
-    <section class="left">
+    <section class="top">
       {{ partial "about.html" . }}
+      {{ partial "menu.html" . }}
+      {{ partial "multilingual.html" . }}
     </section>
-    <section class="right">
-      <div class="menu">
-        {{ partial "menu.html" . }}
-      </div>
+    <section class="middle">
       <div class="content">
         {{ block "main" . }}{{ end }}
       </div>

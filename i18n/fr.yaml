@@ -7,11 +7,15 @@ home:
   viewOnMastodon: "Lire sur Mastodon"
   followOnMastodon: "Suivre"
   publishedDateOnMastodon: "Publié le"
+  about: "À propos"
+  books: "Ouvrages"
+  seeAllBooks: "Tout voir"
+  legal: "Mentions légales"
 
 book:
   by: "par : "
   descr: "Description"
-  about: "A propos de ce livre"
+  about: "À propos de ce livre"
   pages: "Pages"
   words: "Mots"
   publishedDate: Publication
@@ -34,9 +38,9 @@ genres:
 
 about:
   support: "Soutien"
-  patreon: "Soutenez-moi sur Patreon"
-  kofi: "Soutenez-moi sur Ko-fi"
-  liberapay: "Soutenez-moi sur Liberapay"
+  patreon: "Patreon"
+  kofi: "Ko-fi"
+  liberapay: "Liberapay"
   author: |
     Racontez à vos lecteurs qui vous êtes.
   disclaimer: ''

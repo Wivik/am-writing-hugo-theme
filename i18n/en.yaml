@@ -7,6 +7,10 @@ home:
   viewOnMastodon: "View on Mastodon"
   followOnMastodon: "Follow"
   publishedDateOnMastodon: "Published on"
+  about: "About"
+  books: "Books"
+  seeAllBooks: "See all"
+  legal: "Legal Notice"
 
 book:
   by: "by : "
@@ -35,9 +39,9 @@ genres:
 
 about:
   support: "Support"
-  patreon: "Support me on Patreon"
-  kofi: "Support me on Ko-fi"
-  liberapay: "Support me on Liberapay"
+  patreon: "Patreon"
+  kofi: "Ko-fi"
+  liberapay: "Liberapay"
   author: |
     Tell you readers who you are.
   disclaimer: ''

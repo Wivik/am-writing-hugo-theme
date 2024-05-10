@@ -32,12 +32,6 @@ a:hover {
 
 /* main section */
 
-main {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-}
-
 section.top {
   display: flex;
   flex-direction: row;
@@ -93,41 +87,6 @@ div.menu {
   max-height: 3.9rem;
 }
 
-/* responsive part for mobile on main section */
-
-@media only screen and (max-width: 600px) {
-  main {
-    flex-direction: column;
-  }
-
-  section.left {
-    flex: 100%;
-    order: 1;
-  }
-
-  section.right {
-    flex: 100%;
-    order: 0;
-  }
-}
-
-/* header */
-
-header {
-  background-color: var(--header-bg-color);
-  text-align: center;
-  padding: 1rem;
-}
-
-header h1 {
-  font-size: xxx-large;
-  font-weight: bold;
-}
-
-header h2 {
-  font-size: x-large;
-}
-
 
 
 /* main menu */
@@ -154,6 +113,61 @@ div.menu a:link, div.menu a:visited {
 div.menu a:hover {
   background-color: var(--a-menu-bg-color-hover);
 }
+
+/* responsive part for mobile on main section */
+
+@media only screen and (max-width: 600px) {
+
+  section.top {
+    flex-direction: column;
+    padding: 0.2rem;
+  }
+
+  section.middle {
+    flex-direction: column;
+  }
+
+
+  div.menu,
+  div.shortbio,
+  div.menu nav {
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    max-height: 100%;
+  }
+
+  div.multilingual {
+    flex-direction: row;
+    width: 100%;
+    margin: 0.5rem;
+  }
+
+  div.menu a:link, div.menu a:visited {
+    border-bottom: 1px solid var(--a-menu-border-color);
+    border-right: 0;
+  }
+
+}
+
+/* header */
+
+header {
+  background-color: var(--header-bg-color);
+  text-align: center;
+  padding: 1rem;
+}
+
+header h1 {
+  font-size: xxx-large;
+  font-weight: bold;
+}
+
+header h2 {
+  font-size: x-large;
+}
+
+
 
 /* content */
 
@@ -415,6 +429,56 @@ div.mastodon {
   max-width: 35%;
 }
 
+
+@media only screen and (max-width: 600px) {
+
+  div.content {
+    width: 98%;
+  }
+
+
+  div.about-release {
+    flex-direction: column;
+  }
+
+  article.home {
+    margin: 0;
+  }
+
+  article.bio,
+  article.latestrelease {
+    width: 100%;
+  }
+
+  article.bookscaroussel {
+    overflow-x: scroll;
+    width: 98%;
+    justify-content: left;
+  }
+
+  div.lastnews {
+    flex-direction: column;
+  }
+
+  div.book-entry {
+    flex-direction: column-reverse;
+  }
+
+  div.mastodon {
+    max-width: 95%;
+    max-height: 300px;
+  }
+
+  div.book-metadata-flex {
+    flex-direction: column;
+  }
+
+  a:link.read-more, a:visited.read-more {
+    display: block;
+  }
+
+}
+
 /* blog */
 
 ul.blog-feed {
@@ -648,3 +712,12 @@ footer div {
 p.footer-credits {
   font-size: smaller;
 }
+
+@media only screen and (max-width: 600px) {
+
+  footer {
+    flex-direction: column;
+    padding: 0.2rem;
+  }
+}
+

@@ -1,11 +1,16 @@
 home:
   new-release: "New release"
   more: "Discover"
+  Readmore: "Read more"
   patreonpage: "My Patreon page"
   latestnews: "Latest news"
   viewOnMastodon: "View on Mastodon"
   followOnMastodon: "Follow"
   publishedDateOnMastodon: "Published on"
+  about: "About"
+  books: "Books"
+  seeAllBooks: "See all"
+  legal: "Legal Notice"
 
 book:
   by: "by : "
@@ -24,9 +29,12 @@ book:
   unavailable: "Unavailable"
   authorsNote: "Author's note"
   alsoavailable: "Also available on"
-  freePreview: "Free preview"
+  freePreview: "Read a preview"
+  freePreviewOpen: "Open preview"
   draft: "Unpublished Draft"
   pageCountExplanation: "Estimation based on an average of 280 words per pages."
+  readReviews: "Read or leave a review"
+  authorsNote: "Author's note"
 
 genres:
   short-story: "Histoire Courte"
@@ -34,8 +42,9 @@ genres:
 
 about:
   support: "Support"
-  patreon: "Support me on Patreon"
-  kofi: "Support me on Ko-fi"
+  patreon: "Patreon"
+  kofi: "Ko-fi"
+  liberapay: "Liberapay"
   author: |
     Tell you readers who you are.
   disclaimer: ''
@@ -43,6 +52,35 @@ about:
   commission: "Commissions open!"
   legal-notice: |
     The stories and characters in XXXXXXX's books are purely fictional. Any resemblance to existing or former persons is purely coincidental.
+  subscribeBooksReleaseDescription: "Subscribe to the new books release using RSS."
+  subscribeBlogReleaseDescription: "Subscribe to the new blog articles using RSS."
+  subscribeNLDescription: "Subscribe to the new books notifications by e-mail."
+  subscribe: "Subscribe"
+  subscribeDescription: "Find how to subscribe to this website content."
+  newsletter: "E-mail"
+  authorBio: "About author"
+  whereToFindMe: "Where to fine me"
+  whereToReadMe: "Where to read me"
+  support: "Support me"
+  keepInformed: "Keep informed"
+  moreContact: "Contact"
+
+subscribe:
+  title: "Subscribe to the news"
+  subscribe: "Subscribe"
+  descr: "Find here how to subscribe to this website content."
+  newsletter: "E-mail"
+  newsletterGDPR: "You messaging address will be used only to send you a notification when a new book is published. You may unsubscribe anytime by using the link available in the emails."
+  newsletterDescr: "Subscribe to the new books release by e-mail. This is not a newsletter, just a simple publication notice. Nothing more !"
+  thisSite: "This website"
+  thisSiteDescr: "You may follow this website content by just adding it in your bookmarks and consulting it regularly."
+  rssBooks: "Books RSS Feed"
+  rssBooksDescr: "If you use a RSS feed agregator, you may subscribe to the books release feed with the button below."
+  rssBlog: "Blog RSS Feed"
+  rssBlogDescr: "If you use a RSS feed agregator, you may subscribe to the blog article publications feed with the button below."
+  fediverse: "Fediverse"
+  fediverseDescr: "You can follow me on the Fediverse on my Mastodon account."
+
 
 footer:
   copyright: "All rights reserved."

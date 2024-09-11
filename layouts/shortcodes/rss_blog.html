@@ -1,0 +1,9 @@
+{{ if .Site.Params.blog }}
+<h2>{{ i18n "subscribe.rssBlog" }}</h2>
+
+<p>{{ i18n "subscribe.rssBlogDescr" }}</p>
+
+<p>
+    <a href="{{ .Site.BaseURL }}{{ .Page.Lang }}/blog/index.xml" rel="noopener noreferrer" class="support-button rss-button" style="color: var(--body-font-color);" title="{{ i18n "about.subscribeBlogReleaseDescription" }}">{{ i18n "subscribe.subscribe" }}</a>
+</p>
+{{ end }}

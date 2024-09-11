@@ -1,0 +1,25 @@
+<h2 class="about">{{ i18n "about.support" }}</h2>
+
+{{ if .Site.Params.patreon }}
+<p>
+    <a href="{{ .Site.Params.patreon }}" rel="noopener noreferrer" class="support-button patreon-button">{{ i18n "about.patreon" }}</a>
+</p>
+{{ end }}
+
+{{ if .Site.Params.kofi }}
+<p>
+    <a href="{{ .Site.Params.kofi }}" rel="noopener noreferrer" class="support-button kofi-button">{{ i18n "about.kofi" }}</a>
+</p>
+{{ end }}
+
+{{ if .Site.Params.liberapay }}
+<p>
+    <a href="{{ .Site.Params.liberapay }}" rel="noopener noreferrer" class="support-button liberapay-button">{{ i18n "about.liberapay" }}</a>
+</p>
+{{ end }}
+
+{{ if .Site.Params.commission }}
+<p>
+    <a href="{{ .Site.Params.commissionLink }}" rel="noopener noreferrer" class="support-button commission-button">{{ i18n "about.commission" }}</a>
+</p>
+{{ end }}

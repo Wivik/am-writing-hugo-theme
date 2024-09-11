@@ -1,0 +1,24 @@
+<article class="home latestrelease">
+    <h1>{{ i18n "home.new-release" }}</h1>
+    {{ range first 1 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+        {{ if .Draft }}
+        <h1>{{ i18n "book.draft" }}]</h1>
+        {{ end }}
+        <div class="book-entry">
+            <div class="book-details">
+                {{ if .Params.description }}
+                {{ .Params.description | markdownify }}
+                {{ end }}
+            </div>
+            <div class="book-cover">
+            {{ if .Params.cover }}
+                <img src="{{ .Site.BaseURL }}/books/{{ .Params.cover }}" alt="{{ .Title }}">
+            {{ end }}
+            <p class="read-more">
+                <a href="{{ .Permalink }}" class="read-more">{{ i18n "home.more" }}</a>
+            </p>
+
+            </div>
+        </div>
+    {{ end }}
+</article>

@@ -1,16 +1,21 @@
 home:
   new-release: "Dernière publication"
   more: "Découvrir"
+  readMore: "Lire la suite"
   patreonpage: "Ma page Patreon"
   latestnews: "Dernières nouvelles"
   viewOnMastodon: "Lire sur Mastodon"
   followOnMastodon: "Suivre"
   publishedDateOnMastodon: "Publié le"
+  about: "À propos"
+  books: "Ouvrages"
+  seeAllBooks: "Tout voir"
+  legal: "Mentions légales"
 
 book:
   by: "par : "
   descr: "Description"
-  about: "A propos de ce livre"
+  about: "À propos de ce livre"
   pages: "Pages"
   words: "Mots"
   publishedDate: Publication
@@ -23,9 +28,12 @@ book:
   unavailable: "Indisponible"
   authorsNote: "Note de l'auteur"
   alsoavailable: "Aussi disponible sur"
-  freePreview: "Extrait gratuit"
+  freePreview: "Lire un extrait"
+  freePreviewOpen: "Ouvrir l'extrait"
   draft: "Brouillon non publié"
   pageCountExplanation: "Estimation basée sur une moyenne de 280 mots par pages."
+  readReviews: "Lire ou laisser un avis"
+  authorsNote: "Mot de l'auteur"
 
 genres:
   short-story: "Histoire Courte"
@@ -33,8 +41,9 @@ genres:
 
 about:
   support: "Soutien"
-  patreon: "Soutenez-moi sur Patreon"
-  kofi: "Soutenez-moi sur Ko-fi"
+  patreon: "Patreon"
+  kofi: "Ko-fi"
+  liberapay: "Liberapay"
   author: |
     Racontez à vos lecteurs qui vous êtes.
   disclaimer: ''
@@ -42,6 +51,34 @@ about:
   commission: "Commissions ouvertes !"
   legal-notice: |
     Les histoires et personnages présentés dans les livres de XXXXX sont purement fictifs. Toute ressemblance avec des personnes existantes ou ayant existé ne serait que pure coïncidence.
+  subscribeBooksReleaseDescription: "Suivez le fil RSS qui vous informera des nouveaux livres publiés."
+  subscribeBlogReleaseDescription: "Suivez le fil RSS des articles du blog."
+  subscribeNLDescription: "Inscrivez-vous aux notifications de nouvelles sorties par e-mail."
+  subscribe: "Suivre les nouveautés"
+  subscribeDescription: "Retrouvez comment suivre le contenu publié sur ce site."
+  newsletter: "E-mail"
+  authorBio: "À propos de moi"
+  whereToFindMe: "Où me trouver"
+  whereToReadMe: "Où me lire"
+  support: "Me soutenir"
+  keepInformed: "Suivre mes actualités"
+  moreContact: "Contact"
+
+subscribe:
+  title: "Suivre les nouveautés"
+  subscribe: "S'abonner"
+  descr: "Retrouvez comment suivre le contenu publié sur ce site."
+  newsletter: "E-mail"
+  newsletterDescr: "Abonnez-vous aux nouvelles publications de livres par e-mail. Ceci n'est pas une newsletter, mais une simple notification de sortie. Pas plus !"
+  newsletterGDPR: "Votre adresse de messagerie est uniquement utilisée pour vous envoyer une information lors de la publication d'un nouveau livre. Vous pouvez à tout moment utiliser le lien de désabonnement intégré dans chacun de nos mails."
+  thisSite: "Ce site web"
+  thisSiteDescr: "Vous pouvez suivre le contenu en mettant tout simplement ce site en favori et en le consultant régulièrement."
+  rssBooks: "Fil RSS des livres"
+  rssBooksDescr: "Si vous utilisez un agrégateur de fils RSS, vous pouvez souscrire a celui des publications de livres avec le bouton ci-dessous."
+  rssBlog: "Fil RSS du blog"
+  rssBlogDescr: "Si vous utilisez un agrégateur de fils RSS, vous pouvez souscrire a celui des publications des articles du blog avec le bouton ci-dessous."
+  fediverse: "Fediverse"
+  fediverseDescr: "Vous pouvez me suivre sur le Fediverse en vous abonnant à mon profil Mastodon."
 
 footer:
   copyright: "Tous droits réservés."

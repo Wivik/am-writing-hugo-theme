@@ -28,10 +28,12 @@
   --div-book-details-bg-color: #303446;
   --div-book-details-font-color: #c6d0f5;
   --div-book-details-border-color: #c6d0f5;
+  --div-book-entry-grid-bg-color: #292c3c;
 
   /* support buttons */
   --a-support-bg-color: #414559;
   --a-support-bg-color-hover: #626880;
+  --a-support-button-link-color: #2E3440;
 
   --a-commission-color: #303446;
   --a-commission-bg-color: #a6d189;
@@ -40,11 +42,18 @@
   --a-kofi-bg-color: #414559;
   --a-kofi-bg-color-hover: #626880;
 
+  --a-liberapay-font-color: #2E3440;
+  --a-liberapay-bg-color: #ef9f76;
+  --a-liberapay-bg-color-hover: #e5c890;
+
   --a-patreon-bg-color: #414559;
   --a-patreon-bg-color-hover: #626880;
 
   --a-mastodon-follow-bg-color-hover: #626880;
 
+  --a-rss-bg-color: #8caaee;
+  --a-rss-color: #414559;
+  --a-rss-bg-color-hover: #85c1dc;
 
   /* about */
   --p-disclaimer-font-color: #e5c890;

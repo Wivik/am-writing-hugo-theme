@@ -1,0 +1,15 @@
+<div class="multilingual">
+    {{- with resources.Get "img/fr.svg" }}
+
+        <a href="{{ replace $.Permalink "/en/" "/fr/" }}"><img src="{{ .RelPermalink }}" alt="Français" height="20"></a>&nbsp;
+    {{ end }}
+    {{ if  .IsTranslated }}
+        {{- with resources.Get "img/en.svg" }}
+            <a href="{{ replace $.Permalink "/fr/" "/en/" }}"><img src="{{ .RelPermalink }}" alt="English" height="20"></a>
+        {{ end }}
+    {{ else }}
+        {{- with resources.Get "img/en.svg" }}
+            <a href="{{ $.Site.BaseURL }}en"><img src="{{ .RelPermalink }}" alt="English" height="20"></a>
+        {{ end }}
+    {{ end }}
+</div>

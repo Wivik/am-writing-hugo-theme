@@ -12,7 +12,7 @@ words: 18k
 link: 
 amazon: 
 patreon: 
-kind: book
+book: true
 epub: 
 publishDate: {{ .Date }}
 free: false

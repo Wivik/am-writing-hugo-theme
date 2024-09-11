@@ -1,0 +1,21 @@
+<h1>{{ i18n "home.books" }} - <a href="{{ .Site.BaseURL }}/{{ .Lang }}/books/">{{ i18n "home.seeAllBooks" }}</a></h1>
+<article class="bookscaroussel">
+    {{ range first 5 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+        <div class="caroussel">
+            {{ if .Draft }}
+            [{{ i18n "book.draft" }}]
+            {{ end }}
+            <div class="book-cover">
+                {{ if .Params.cover }}
+                <a href="{{ .Permalink }}">
+                    <img src="{{ .Site.BaseURL }}/books/{{ .Params.cover }}" alt="{{ .Title }}">
+                </a>
+                {{ end }}
+                <p class="read-more">
+                    <a href="{{ .Permalink }}" class="read-more">{{ i18n "home.more" }}</a>
+                </p>
+            </div>
+        </div>
+
+    {{ end }}
+</article>

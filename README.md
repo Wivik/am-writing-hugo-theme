@@ -17,6 +17,8 @@ Am Writing supports :
 - Various book metadata for a standard display page
 - Fully customizable
 - Display by book genre
+- Your personal author blog
+- RSS support
 
 ![Screenshot2](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/screenshot2.png)
 
@@ -134,19 +136,31 @@ The theme supports the following settings :
 
 | Setting | Required | Default value | Description |
 | ------- | -------- | ------------- | ----------- |
+| `params.amazonAuthorProfile` | No | `none` | URL to your Amazon Author profile |
 | `params.author` | No | `none` | Your author name, your should set it. |
 | `params.avatar` | No | `none` | A picture expected to be in the `/static` folder. |
+| `params.blog` | No | `false` | Enable or disable the blog feature.<br>Supported parameters :<br> - `true`<br>- `false` (default)<br>See [Blog feature](#Blog) for how to use. |
+| `params.bookListType` | No | `grid` | Change the book list style, default is thumbnail `grid` with description. Other option is `list` for the previous display way.<br>Possible values :<br>- `grid` (default)<br>- `list` |
+| `params.books2readProfile` | No | `none` | URL to your Books2Read profile |
 | `params.commission` | No | `false` | Display a button showing you're open for commissions. Possible values : `true` (commissions opened), `false` (commissions closed) |
 | `params.commissionLink` | No | `none` | The link to your commission platform. |
 | `params.contentLicense` | No | `none` | Display the license used for the website in the footer. Ex : CC BY-SA 4.0 |
+| `params.displaySubscribeButton` | No | `false` | Along with the usage of the `subscribe-example.md` page you would put in your `content` direct and rename, this option will enable a 'Subscribe' button redirecting to the subscribe page. See [Subscribe to the site's content](#subscribe-to-the-sites-content) for more details. |
+| `params.displaySubscribeRSS` | No | `true` | Display the RSS subscribe buttons on the About left section. The RSS link is for the books release. If the blog is enabled, another button will be display too. Same for the newsletter link. |
 | `params.goodreads` | No | `none` | Your GoodReads profile URL |
+| `params.googlePlayAuthorProfile` | No | `none` | URL to your Google Play Books profile |
 | `params.kofi` | No | `none` | Your Ko-fi profile URL |
+| `params.liberapay` | No | `none` | Your Liberapay support URL |
 | `params.mastodon` | No | `none` | The URL of your Mastodon profile. |
 | `params.mastodonMaxItems` | No | `5` | How much posts you want to display in your feed. |
+| `params.neovelAuthorProfile` | No | `none` | URL to your Neovel profile |
+| `params.newsletterIntegrationCode` | No | `none` | Using the multiline yaml syntax to paste here the integration code for your newsletter subscription. |
+| `params.newsletterSubscriptionLink` | No | `none` | The link to your Newsletter subscription page. **This setting has the precedence over the newsletter integration in the Susbcription page.** Meaning if you set both, the link to the newsletter subscription will be displayed but not the integrated form. |
 | `params.pageCountisEstimated` | No | `false` | If set to true, this will add a small pop-up on the number of Pages displayed on the book details indicating the page count is an estimation. This is recommended if you only publish epub files because unlike physical copies, they does not have actual defined pages layout. <br>The default estimation is said to be based on 280 words per pages (see my [epub metadata exporter tool](https://github.com/Wivik/epub-metadata-exporter) for more). You may adapt this message in the `i18n` translation. |
-| `params.patreon` | No | `none` | Your Patreon profile URL |
+| `params.patreon` | No | `none` | Your Patreon profile URL. You need a picture for the homepage, save it as `patreon.jpg` in the `static/` folder. |
 | `params.theme` | No | `nord` | Use one of the built-in themes :<br>- `nord`<br>- `catpuccin-latte`<br>- `catpuccin-frappe` |
 | `params.themeFont` | No | `serif` | Use the Serif or Sans Serif font. Available options :<br>- `serif`<br>- `sans-serif` |
+| `params.xinxiiAuthorProfile` | No | `none` | URL to your Xinxii profile |
 
 ### Themes showcase
 
@@ -166,6 +180,17 @@ Dark
 
 [![Dark](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/dark-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/dark.png)
 
+### Book list layout
+
+The theme supports two layouts for the book list : grid (default) and list.
+
+Grid layout :
+
+[![Grid](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/grid-layout-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/grid-layout.png)
+
+List layout (previous one) :
+
+[![List](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/list-layout-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/list-layout.png)
 
 ### Override default profile
 
@@ -187,6 +212,80 @@ about:
 
 ```
 
+### Blog
+
+This theme can also be your blog. It's a very simple feature so don't expect fancy use cases.
+
+[![blog](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/blog-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/blog.png)
+
+To use the blog feature, follow these steps :
+
+1. Enable the feature in your hugo site config
+
+```yaml
+params:
+  blog: true
+```
+
+I recommend to reduce the article summary. Add the following setting in hugo config too :
+
+`summaryLength: 20`
+
+2. Add the menu entry
+
+```yaml
+        - identifier: blog
+          name: 'Blog'
+          url: /blog/
+          weight: 30
+```
+
+Or if you use multilingual :
+
+```yaml
+        - identifier: blog
+          name: 'Blog'
+          url: /fr/blog/
+          weight: 30
+```
+
+```yaml
+        - identifier: blog
+          name: 'Blog'
+          url: /en/blog/
+          weight: 30
+```
+
+Warning : in case of multilingual support, the article will have to be in all languages folders if they're intended to be display for each of them. Refer to the [Multilingual mode](https://gohugo.io/content-management/multilingual/) Hugo documentation.
+
+3. Create your first blog entry.
+
+```bash
+hugo new --kind blog blog/my-first-post.md
+```
+
+### Subscribe to the site's content
+
+This feature was made to generate a "how to subscribe to this content" page. Basically, it's an agregate of your various communication channels for your audience.
+
+To enable this feature, first you need to set `params.displaySubscribeButton` to `true` in `hugo.yaml`. The following button will appear :
+
+[![subscribe](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/subscribe-button.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/subscribe-button.png)
+
+Then, mode `subscribe-example.md` available in with this theme to your `content/` folder and name it `subscribe.md`. Attention, if your site is multilingual, you need to copy it in each language folder. Such as `content/fr/subscribe.md` and `content/en/subscribe.md`.
+
+[![subscribe](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/subscribe-page-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/subscribe-page.png)
+
+This page is basically a list of Hugo Shortcodes that will display the following elements :
+
+- `this_site` : a simple explanation about registering the site in the user's bookmarks.
+- `rss_books` : a RSS feed for the books only
+- `rss_blog` : a RSS feed for the [Blog](#blog) feature. Will be displayed only if the blog is enabled.
+- `newsletter` : the integration code for your newsletter provider. Will integrate the code provided in `params.newsletterIntegrationCode`.
+- `fediverse` : a link to your Mastodon account if defined in the settings.
+
+All descriptions displayed in these pages can be overrided in the related `i18n` file.
+
 ## Books management
 
 ### Books page content
@@ -199,27 +298,28 @@ Variables documentation :
 
 | Name | Required | Default value | Description |
 | ---- | -------- | ------------- | ----------- |
-| `title` | Yes | `{{ replace .File.ContentBaseName "-" " " \| title }}` | The Book's title |
-| `date`| Yes | `{{ .Date }}` | The book's publication date. This is defined by Hugo as page creation, so modify it to reflect the actual release date. |
-| `draft` | No | `false` | Set true if you don't want to publish this entry yet. |
-| `cover` | No but recommended |  `{{ printf "%s.jpg" .File.ContentBaseName }}` | The name of the cover file. This file is expected to be in the `/static` folder. |
+| `amazon` | No | `none` | The link to Amazon KDP entry. If you publish only on Amazon, ignore this field and put the link in `link`. |
 | `author` | Yes | `{{ .Site.Params.author }}` | Author's name, in case it would be a different person. |
+| `authorsnote` | No | `none` | If you want to add a personal comment about your book. |
+| `book` | Yes | `true` | Do not remove or change, it's used by the template. |
+| `cover` | No but recommended |  `{{ printf "%s.jpg" .File.ContentBaseName }}` | The name of the cover file. This file is expected to be in the `/static` folder. |
+| `date`| Yes | `{{ .Date }}` | The book's publication date. This is defined by Hugo as page creation, so modify it to reflect the actual release date. |
 | `description` | No but recommended | `none` | The book's description. Could be the synopsis or whatever else you want. Markdown is supported. |
+| `draft` | No | `false` | Set true if you don't want to publish this entry yet. |
+| `epub` | No | `false` | You can directly propose an epub file, put in this field the epub filename (ex : something.epub). It must be placed in the `/static/free-books` folder. |
+| `free` | No | `false` | If you publish your book for free, will change the value of the main link button to "Free book". |
+| `freepreview` | No | `false` | If you have a free preview for your book, put here the name of the `.epub` file. The file is expected to be in the `/static/books-preview/` folder. |
+| `genres` | No | `none` | A list of your book's genres. Use the technical name available in the `i18n` files to have the labels translated. |
+| `googlePlay` | No | `none` | The link to Google Play Books if you publish there. |
 | `isbn` | No | `1234567891237` | Your book's ISBN |
 | `language` | Yes | `EN` | The book's language. Required if multilingual and the book has a translation. |
-| `pages` | No | `70` | How much pages the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
-| `words` | No | `18k` | How much words the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
 | `link` | No | `none`  | The link of your main selling place. Book2Read for example.<br>If missing, the page will display "Unavailable". |
-| `amazon` | No | `none` | The link to Amazon KDP entry. If you publish only on Amazon, ignore this field and put the link in `link`. |
+| `neovel` | No | `none` | The link to Neovel if you publish there. |
+| `pages` | No | `70` | How much pages the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
 | `patreon` | No | `none`  | The link to Patreon if you publish there. |
-| `kind` | Yes | `book` | Do not remove or change, it's used by the template. |
-| `freepreview` | No | `false` | If you have a free preview for your book, put here the name of the `.epub` file. The file is expected to be in the `/static/books-preview/` folder. |
-| `free` | No | `false` | If you publish your book for free, will change the value of the main link button to "Free book". |
-| `epub` | No | `false` | You can directly propose an epub file, put in this field the epub filename (ex : something.epub). It must be placed in the `/static/free-books` folder. |
-| `genres` | No | `none` | A list of your book's genres. Use the technical name available in the `i18n` files to have the labels translated. |
-| `authorsnote` | No | `none` | If you want to add a personal comment about your book. |
 | `publishedOn` | No | `{{ .Date }}` | The publication date of your book. Default to the page creation date if not provided. |
-| `googlePlay` | No | `none` | The link to Google Play Books if you publish there. |
+| `title` | Yes | `{{ replace .File.ContentBaseName "-" " " \| title }}` | The Book's title |
+| `words` | No | `18k` | How much words the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
 | `xinxii` | No | `none` | The link to XinXii if you publish there. |
 
 

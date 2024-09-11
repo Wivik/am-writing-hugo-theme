@@ -1,12 +1,14 @@
-<nav>
-{{- range site.Menus.main }}
-      <a href="{{ .URL }}">
-        {{ .Name }}
-        {{- with .Page }}
-          {{- with .Params.version -}}
-            ({{ . }})
-          {{- end }}
-        {{- end }}
-    </a>
-{{- end }}
-</nav>
+<div class="menu">
+  <nav>
+    {{- range site.Menus.main }}
+          <a href="{{ .URL }}">
+            {{ .Name }}
+            {{- with .Page }}
+              {{- with .Params.version -}}
+                ({{ . }})
+              {{- end }}
+            {{- end }}
+        </a>
+    {{- end }}
+    </nav>
+</div>

@@ -35,6 +35,10 @@ book:
   pageCountExplanation: "Estimation based on an average of 280 words per pages."
   readReviews: "Read or leave a review"
   authorsNote: "Author's note"
+  directBuy: "⭐ Buy directly"
+  price: "Price"
+  betterOnDirectSales: "To actively support the creation diversity and ensure the best earnings for the author, we recommend you to buy your copy on the direct shop."
+  bookFormat: "Book format"
 
 genres:
   short-story: "Histoire Courte"

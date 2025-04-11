@@ -13,10 +13,9 @@ Am Writing supports :
 - Several different color themes
 - Multilingual (French and English by default)
 - Mastodon Feed integration
-- Link to your Patreon, Mastodon, Ko-fi profile
+- Link to your Patreon, Mastodon, Ko-Fi, and other profiles
 - Various book metadata for a standard display page
-- Fully customizable
-- Display by book genre
+- Customizable
 - Your personal author blog
 - RSS support
 
@@ -130,17 +129,19 @@ languages:
 
 Adapt it with you choices.
 
-### Specific settings
+### Specific params
 
-The theme supports the following settings :
+The theme supports the following params :
 
 | Setting | Required | Default value | Description |
 | ------- | -------- | ------------- | ----------- |
 | `params.amazonAuthorProfile` | No | `none` | URL to your Amazon Author profile |
 | `params.author` | No | `none` | Your author name, your should set it. |
 | `params.avatar` | No | `none` | A picture expected to be in the `/static` folder. |
+| `params.babelioAuthorProfile` | No | `none` | URL to your Babelio profile |
 | `params.blog` | No | `false` | Enable or disable the blog feature.<br>Supported parameters :<br> - `true`<br>- `false` (default)<br>See [Blog feature](#Blog) for how to use. |
-| `params.bookListType` | No | `grid` | Change the book list style, default is thumbnail `grid` with description. Other option is `list` for the previous display way.<br>Possible values :<br>- `grid` (default)<br>- `list` |
+| `params.blueskyMaxitems` | No | `5` | How much posts you want to display in your feed. |
+| `params.blueskyProfileName` | No | `none` | The **name** of your Blueskey profile. |
 | `params.books2readProfile` | No | `none` | URL to your Books2Read profile |
 | `params.commission` | No | `false` | Display a button showing you're open for commissions. Possible values : `true` (commissions opened), `false` (commissions closed) |
 | `params.commissionLink` | No | `none` | The link to your commission platform. |
@@ -151,8 +152,8 @@ The theme supports the following settings :
 | `params.googlePlayAuthorProfile` | No | `none` | URL to your Google Play Books profile |
 | `params.kofi` | No | `none` | Your Ko-fi profile URL |
 | `params.liberapay` | No | `none` | Your Liberapay support URL |
-| `params.mastodon` | No | `none` | The URL of your Mastodon profile. |
 | `params.mastodonMaxItems` | No | `5` | How much posts you want to display in your feed. |
+| `params.mastodonProfileURL` | No | `none` | The URL of your Mastodon profile. |
 | `params.neovelAuthorProfile` | No | `none` | URL to your Neovel profile |
 | `params.newsletterIntegrationCode` | No | `none` | Using the multiline yaml syntax to paste here the integration code for your newsletter subscription. |
 | `params.newsletterSubscriptionLink` | No | `none` | The link to your Newsletter subscription page. **This setting has the precedence over the newsletter integration in the Susbcription page.** Meaning if you set both, the link to the newsletter subscription will be displayed but not the integrated form. |
@@ -179,18 +180,6 @@ Catpuccin Frappe
 Dark
 
 [![Dark](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/dark-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/dark.png)
-
-### Book list layout
-
-The theme supports two layouts for the book list : grid (default) and list.
-
-Grid layout :
-
-[![Grid](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/grid-layout-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/grid-layout.png)
-
-List layout (previous one) :
-
-[![List](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/list-layout-tn.png)](https://raw.githubusercontent.com/Wivik/am-writing-hugo-theme/main/images/list-layout.png)
 
 ### Override default profile
 
@@ -299,12 +288,18 @@ Variables documentation :
 | Name | Required | Default value | Description |
 | ---- | -------- | ------------- | ----------- |
 | `amazon` | No | `none` | The link to Amazon KDP entry. If you publish only on Amazon, ignore this field and put the link in `link`. |
+| `atramenta` | No | `none` | The link to the Atramenta publication. |
 | `author` | Yes | `{{ .Site.Params.author }}` | Author's name, in case it would be a different person. |
 | `authorsnote` | No | `none` | If you want to add a personal comment about your book. |
+| `babelio` | No | `none` | The link to Babelio for reviews reading. |
 | `book` | Yes | `true` | Do not remove or change, it's used by the template. |
+| `booknode` | No | `none` | The link to Booknode for reviews reading. |
 | `cover` | No but recommended |  `{{ printf "%s.jpg" .File.ContentBaseName }}` | The name of the cover file. This file is expected to be in the `/static` folder. |
 | `date`| Yes | `{{ .Date }}` | The book's publication date. This is defined by Hugo as page creation, so modify it to reflect the actual release date. |
 | `description` | No but recommended | `none` | The book's description. Could be the synopsis or whatever else you want. Markdown is supported. |
+| `digitalFormat` | No | `none` | Indicate here what kind of format is the digital version (EPUB or PDF) |
+| `digitalPrice` | No | `none` | The price of the ebook version. |
+| `direct` | No | `none` | The URL to your direct store. In case you have a paper and an ebook provide a link that matches both. |
 | `draft` | No | `false` | Set true if you don't want to publish this entry yet. |
 | `epub` | No | `false` | You can directly propose an epub file, put in this field the epub filename (ex : something.epub). It must be placed in the `/static/free-books` folder. |
 | `free` | No | `false` | If you publish your book for free, will change the value of the main link button to "Free book". |
@@ -314,9 +309,11 @@ Variables documentation :
 | `isbn` | No | `1234567891237` | Your book's ISBN |
 | `language` | Yes | `EN` | The book's language. Required if multilingual and the book has a translation. |
 | `link` | No | `none`  | The link of your main selling place. Book2Read for example.<br>If missing, the page will display "Unavailable". |
-| `neovel` | No | `none` | The link to Neovel if you publish there. |
-| `pages` | No | `70` | How much pages the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
+| `livraddict` | No | `none` | The link to Livraddict for reviews reading. |
+| `pages` | No | `none` | How much pages the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
 | `patreon` | No | `none`  | The link to Patreon if you publish there. |
+| `physicalFormat` | No | `none` | Indicate here what kind of format is the physical version (Paperback, hardback) |
+| `physicalPrice` | No | `none` | The price of the physical book version. |
 | `publishedOn` | No | `{{ .Date }}` | The publication date of your book. Default to the page creation date if not provided. |
 | `title` | Yes | `{{ replace .File.ContentBaseName "-" " " \| title }}` | The Book's title |
 | `words` | No | `18k` | How much words the book contains. You can use [a tool](https://github.com/Wivik/epub-metadata-exporter) I've made for this information. |
@@ -354,4 +351,5 @@ Am Writing is licensed under MIT. See [LICENSE](https://github.com/Wivik/am-writ
 - Using Remix Icons licensed under Apache 2.0
 - Uses Catpuccin color scheme licensed under MIT license
 - Uses Nord Theme color scheme licensed under MIT license
+- Uses the [EBGaramond12](https://github.com/octaviopardo/EBGaramond12) font for text previews, under OFL-1.1 license
 

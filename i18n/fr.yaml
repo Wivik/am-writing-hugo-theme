@@ -22,7 +22,7 @@ book:
   isbn: "ISBN"
   buy: "Où trouver ce livre"
   language: "Langue"
-  book2read: "Où acheter"
+  book2read: "Librairie en ligne"
   freebook: "Livre gratuit"
   download: "Télécharger"
   unavailable: "Indisponible"
@@ -34,6 +34,10 @@ book:
   pageCountExplanation: "Estimation basée sur une moyenne de 280 mots par pages."
   readReviews: "Lire ou laisser un avis"
   authorsNote: "Mot de l'auteur"
+  directBuy: "⭐ Boutique directe"
+  price: "Prix"
+  betterOnDirectSales: "Pour participer activement au soutien de la diversité créative et garantir la plus juste rémunération pour l'auteur, nous vous recommandons d'acheter votre exemplaire par la boutique directe."
+  bookFormat: "Format du livre"
 
 genres:
   short-story: "Histoire Courte"

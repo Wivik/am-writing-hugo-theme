@@ -1,5 +1,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+{{ if .Site.Params.description }}
+<meta name="description" content="{{ .Site.Params.description }}">
+{{ end }}
+
+<meta name="tdm-reservation" content="{{ .Site.Params.tdmReservation }}">
+{{ with resources.Get "policies/policy.json" }}
+<meta name="tdm-policy" content="{{ .Permalink }}">
+{{ end }}
+
+
 {{ with .OutputFormats.Get "rss" -}}
 {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}

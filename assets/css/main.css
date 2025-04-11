@@ -21,7 +21,8 @@ body {
 
 /* main links colors */
 
-a:link, a:visited {
+a:link,
+a:visited {
   transition: ease-in-out 0.2s;
   color: var(--a-main-link-color);
 }
@@ -98,7 +99,8 @@ div.menu nav {
   padding-top: 1rem;
 }
 
-div.menu a:link, div.menu a:visited {
+div.menu a:link,
+div.menu a:visited {
   flex: 1;
   transition: ease-in-out 0.2s;
   text-decoration: none;
@@ -143,7 +145,8 @@ div.menu a:hover {
     margin: 0.5rem;
   }
 
-  div.menu a:link, div.menu a:visited {
+  div.menu a:link,
+  div.menu a:visited {
     border-bottom: 1px solid var(--a-menu-border-color);
     border-right: 0;
   }
@@ -203,7 +206,10 @@ div.not-book {
 }
 
 div.not-book img {
-  max-width: 300px;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div.book-entry {
@@ -247,6 +253,9 @@ div.book-entry-grid {
   text-align: center;
 }
 
+p.small-note {
+  font-size: small;
+}
 
 div.book-entry-grid h1 {
   font-size: 1.2rem;
@@ -257,7 +266,7 @@ div.book-entry-grid h3 {
   margin: 0.5rem;
 }
 
-div.book-entry-grid details{
+div.book-entry-grid details {
   margin: 0.5rem;
 }
 
@@ -274,6 +283,15 @@ div.book-cover img {
   box-shadow: 10px 10px 5px var(--img-book-cover-shadow-color);
 }
 
+div.book-cover p.price {
+  font-size: x-large;
+  background: var(--div-book-preview-bg-color);
+  border: 1px solid var(--div-book-details-border-color);
+  /* max-width: 65%; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 @media only screen and (max-width: 600px) {
   div.book-grid {
@@ -287,12 +305,16 @@ div.book-cover img {
     margin-left: auto;
     margin-right: auto;
   }
+
   div.not-book {
     width: 90%;
   }
 
   div.not-book img {
-    max-width: 90%;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -301,7 +323,8 @@ p.read-more {
   font-size: larger;
 }
 
-a:link.read-more, a:visited.read-more {
+a:link.read-more,
+a:visited.read-more {
   text-decoration: none;
   color: var(--a-readmore-color);
   background-color: var(--a-readmore-bg-color);
@@ -318,11 +341,13 @@ a:hover.read-more {
   background-color: var(--a-readmore-bg-color-hover);
 }
 
-a:link.book-link-icon, a:visited.book-link-icon {
+a:link.book-link-icon,
+a:visited.book-link-icon {
   text-decoration: none;
 }
 
-a:link.book-link-icon path, a:visited.book-link-icon path {
+a:link.book-link-icon path,
+a:visited.book-link-icon path {
   fill: var(--a-main-link-color);
   transition: ease-in-out 0.2s;
 }
@@ -332,7 +357,8 @@ a:hover.book-link-icon {
   transition: ease-in-out 0.2s;
 }
 
-a:link.book-link-name, a:visited.book-link-name {
+a:link.book-link-name,
+a:visited.book-link-name {
   text-decoration: none;
   transition: ease-in-out 0.2s;
   font-size: 3.5rem;
@@ -345,7 +371,7 @@ a:hover.book-link-name {
 }
 
 div.book-metadata-flex {
-  display:flex;
+  display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
@@ -401,7 +427,8 @@ div.page-count-popup span.page-count-popup-content {
   margin-left: -1rem;
 }
 
-div.page-count-popup:hover span.page-count-popup-content, .page-count-popup:active span.page-count-popup-content {
+div.page-count-popup:hover span.page-count-popup-content,
+.page-count-popup:active span.page-count-popup-content {
   visibility: visible;
 }
 
@@ -413,7 +440,16 @@ div.book-preview {
   margin-right: auto;
   border: 1px solid var(--div-book-details-border-color);
   background-color: var(--div-book-preview-bg-color);
+  font-family: var(--sample-fonts);
+  font-size: 1.3rem;
   padding: 1rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+div.book-preview p {
+  margin: 0;
+  text-indent: 20px;
 }
 
 /* home */
@@ -510,7 +546,8 @@ div.mastodon {
     flex-direction: column;
   }
 
-  a:link.read-more, a:visited.read-more {
+  a:link.read-more,
+  a:visited.read-more {
     display: block;
   }
 
@@ -560,7 +597,8 @@ ul.blog-feed li {
   flex: 1;
 }
 
-.mastodon-feed div.header a:link, .mastodon-feed div.header a:visited {
+.mastodon-feed div.header a:link,
+.mastodon-feed div.header a:visited {
   color: var(--a-menu-link-color);
   font-size: large;
   flex: 1;
@@ -589,7 +627,7 @@ ul.blog-feed li {
 .mastodon-feed div.status {
   border: 1px solid var(--div-book-details-border-color);
   padding: 1rem;
-  padding-bottom:0;
+  padding-bottom: 0;
   margin-bottom: 1rem;
 }
 
@@ -627,11 +665,13 @@ h2.about {
 
 
 
-a.social-button:link, a.social-button:visited {
+a.social-button:link,
+a.social-button:visited {
   text-decoration: none;
 }
 
-a.social-button:link svg path, a.social-button:visited svg path {
+a.social-button:link svg path,
+a.social-button:visited svg path {
   fill: var(--a-social-button-link-color);
 }
 
@@ -762,4 +802,3 @@ p.footer-credits {
     padding: 0.2rem;
   }
 }
-

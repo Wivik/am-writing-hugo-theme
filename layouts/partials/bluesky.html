@@ -1,0 +1,18 @@
+{{ if and (.Site.Params.blueskyProfileName) (.Site.Params.displayBlueskyFeed) }}
+<div class="lastnews-item mastodon">
+    <h2>Bluesky</h2>
+    <p>
+      <div id="mastodon-feed" class="mastodon-feed"></div>
+        <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
+        <bsky-embed
+          username="{{ .Site.Params.blueskyProfileName }}"
+          mode="light"
+          link-target="_blank"
+          custom-styles=".w-full{max-width: 90%}"
+          limit="{{ .Site.Params.blueskyMaxItems }}"
+        >
+        </bsky-embed>
+    </p>
+</div>
+
+{{ end }}

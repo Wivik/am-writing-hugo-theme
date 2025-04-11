@@ -1,4 +1,4 @@
-{{ if .Site.Params.mastodon }}
+{{ if and (.Site.Params.mastodonProfileURL) (.Site.Params.displayMastodon) }}
 <div class="lastnews-item mastodon">
     <h2>Mastodon</h2>
     <p>

@@ -13,13 +13,16 @@
     {{ end }}
 
     <p class="read-more">
+
+      {{ if and (.Params.direct) }}
+      <a href="{{ .Params.direct }}" target="_blank" rel="noopener noreferrer" class="read-more">
+        {{ i18n "book.directBuy" }}
+      </a>
+      {{ end }}
+
       {{ if and (.Params.link) (eq .Site.Language.Lang "fr") }}
       <a href="{{ .Params.link }}" target="_blank" rel="noopener noreferrer" class="read-more">
-        {{ if .Params.free }}
-        {{ i18n "book.freebook" }}
-        {{ else }}
         {{ i18n "book.book2read" }}
-        {{ end }}
       </a>
       {{ else if eq .Site.Language.Lang "fr" }}
       <i>{{ i18n "book.unavailable" }}</i>
@@ -36,7 +39,6 @@
         {{ i18n "book.download" }}
       </a>
       {{ end }}
-
 
       {{ if and (.Params.link) (eq .Site.Language.Lang "en") }}
       <a href="{{ .Params.link }}" target="_blank" rel="noopener noreferrer" class="read-more">
@@ -64,7 +66,7 @@
 
     </p>
 
-    {{ if or (.Params.amazon ) ( .Params.patreon ) ( .Params.kofi ) ( .Params.googlePlay ) ( .Params.xinxii ) ( .Params.neovel ) }}
+    {{ if or (.Params.amazon ) ( .Params.patreon ) ( .Params.kofi ) ( .Params.googlePlay ) ( .Params.xinxii ) ( .Params.atramenta ) }}
     <p>
       {{ i18n "book.alsoavailable" }} : <br />
       {{ if .Params.amazon }}
@@ -107,21 +109,29 @@
       </a>
       {{ end }}
 
-      {{ if .Params.neovel }}
-      <a href="{{ .Params.neovel }}" target="_blank" rel="noopener noreferrer" title="Neovel" class="book-link-name">
-        <span class="xinxii" style="font-family: sans-serif; font-style: italic;">N</span>
+      {{ if .Params.atramenta }}
+      <a href="{{ .Params.atramenta }}" target="_blank" rel="noopener noreferrer" title="Atramenta" class="book-link-name">
+        <span class="xinxii" style="font-family: sans-serif; font-style: italic;">A</span>
       </a>
       {{ end }}
 
     </p>
     {{ end }}
+    <p class="small-note">{{ i18n "book.betterOnDirectSales" }}</p>
 
   </div>
   <div class="book-cover">
     {{ if .Params.cover }}
     <img src="{{ .Site.BaseURL }}/books/{{ .Params.cover }}" alt="{{ .Title }}">
+    {{ if .Params.physicalFormat }}
+    <p class="price">{{ .Params.physicalFormat}} : {{ .Params.physicalPrice }} €</p>
+    {{ end }}
+    {{ if .Params.digitalPrice }}
+    <p class="price">{{ .Params.digitalFormat }} : {{ .Params.digitalPrice }} €</p>
+    {{ end }}
     {{ end }}
   </div>
+
 </div>
 
 <h2>{{ i18n "book.about" }}</h2>
@@ -132,16 +142,19 @@
         <h3>{{ i18n "book.authorsNote" }}</h3>
         <p>{{ .Params.authorsnote | markdownify }}</p>
     {{ end }}
-    {{ if or (.Params.babelio) (.Params.goodreads) (.Params.livraddict) }}
+    {{ if or (.Params.babelio) (.Params.goodreads) (.Params.livraddict) (.Params.booknode) }}
       <h3>{{ i18n "book.readReviews" }}</h3>
         {{ if .Params.babelio }}
           <p>- <a href="{{ .Params.babelio }}" target="_blank" rel="noopener noreferrer" title="Babelio">Babelio</a></p>
         {{ end }}
-                {{ if .Params.goodreads }}
+        {{ if .Params.goodreads }}
           <p>- <a href="{{ .Params.goodreads }}" target="_blank" rel="noopener noreferrer" title="GoodReads">GoodReads</a></p>
         {{ end }}
-                {{ if .Params.livraddict }}
+        {{ if .Params.livraddict }}
           <p>- <a href="{{ .Params.livraddict }}" target="_blank" rel="noopener noreferrer" title="Livraddict">Livraddict</a></p>
+        {{ end }}
+        {{ if .Params.booknode }}
+          <p>- <a href="{{ .Params.booknode }}" target="_blank" rel="noopener noreferrer" title="Book Node">Book Node</a></p>
         {{ end }}
     {{ end }}
   </div>
@@ -203,6 +216,12 @@
       </svg>
       {{ i18n "book.isbn" }} <br /> {{ .Params.isbn }}
     </div>
+
+    {{ if .Params.bookFormat }}
+    <div class="book-metadata-entry"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor"><path d="M21 21H13V6C13 4.34315 14.3431 3 16 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21ZM11 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H8C9.65685 3 11 4.34315 11 6V21ZM11 21H13V23H11V21Z"></path></svg>
+    {{ i18n "book.bookFormat" }} <br /> {{ .Params.bookFormat }}
+    </div>
+    {{ end }}
 
   </div>
 
